@@ -241,7 +241,9 @@
 
 .from-blue-50 {
   --tw-gradient-from: #eff6ff var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(239 246 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-from-position:  ;
+  --tw-gradient-to: rgb(239 246 255 / 0)  var(--tw-gradient-from-position);
+  --tw-gradient-to-position:  ;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
 }
 
@@ -250,7 +252,9 @@
 }
 
 .via-sky-100 {
+  --tw-gradient-via-position:  ;
   --tw-gradient-to: rgb(224 242 254 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-to-position:  ;
   --tw-gradient-stops: var(--tw-gradient-from), #e0f2fe var(--tw-gradient-via-position), var(--tw-gradient-to)
 }
 
@@ -259,7 +263,8 @@
 }
 
 .to-blue-200 {
-  --tw-gradient-to: #bfdbfe var(--tw-gradient-to-position)
+  --tw-gradient-to: #bfdbfe var(--tw-gradient-to-position);
+  --tw-gradient-to-position:  
 }
 
 .to-90\% {
