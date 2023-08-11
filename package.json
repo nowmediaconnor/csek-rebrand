@@ -25,10 +25,13 @@
         "dev": "cross-env NODE_ENV=development concurrently \"npm run dev:css-app\" \"npm run dev:css-editor\" \"npm run dev:js\"",
         "watch": "cross-env NODE_ENV=development concurrently \"npm run watch:css-app\" \"npm run watch:css-editor\" \"npm run watch:js\"",
         "browser-sync": "cross-env NODE_ENV=development browser-sync start --proxy \"csek-rebrand.test\" --host=\"csek-rebrand.test\" --no-inject-changes --files=\"./\"",
-        "watch-sync": "cross-env NODE_ENV=development concurrently \"npm run browser-sync\" \"npm run watch\""
+        "watch-sync": "cross-env NODE_ENV=development concurrently \"npm run browser-sync\" \"npm run watch\"",
+        "start": "wp-scripts start",
+        "build": "wp-scripts build"
     },
     "devDependencies": {
         "@jeffreyvr/tailwindcss-tailpress": "^2.0.0",
+        "@wordpress/scripts": "^26.10.0",
         "autoprefixer": "^10.4.13",
         "browser-sync": "^2.26.14",
         "concurrently": "^6.2.1",
@@ -39,5 +42,6 @@
         "postcss-nested-ancestors": "^2.0.0",
         "tailwindcss": "^3.3.0"
     },
-    "main": "index.js"
+    "main": "js/app.js",
+    "dependencies": {}
 }
