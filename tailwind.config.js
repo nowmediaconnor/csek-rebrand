@@ -27,6 +27,15 @@ module.exports = {
                 syne: ["Syne", "sans-serif"],
                 montserrat: ["Montserrat", "sans-serif"],
             },
+            keyframes: {
+                spin: {
+                    from: { transform: "rotate(0deg)" },
+                    to: { transform: "rotate(-360deg)" },
+                },
+            },
+            animation: {
+                "spin-slow": "spin 3s linear infinite",
+            },
         },
         screens: {
             xs: "480px",

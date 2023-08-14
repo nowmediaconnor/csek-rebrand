@@ -41,7 +41,7 @@
 					</li>
 				</ul>
 			</nav>
-			<h3 id="scroll-down" class="fixed bottom-0 font-syne font-semibold text-sm left-[50%] translate-x-[-50%] translate-y-[50%] text-white">
+			<h3 id="scroll-down" class="fixed bottom-0 font-syne font-semibold text-sm left-[50%] translate-x-[-50%] translate-y-[50%] text-white z-50 scroll-fade-away">
 				SCROLL DOWN SCROLL DOWN SCROLL DOWN
 			</h3>
 		</header>

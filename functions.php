@@ -45,7 +45,11 @@ function csek_rebrand_enqueue_scripts()
 
 	wp_enqueue_style('tailpress', csek_rebrand_asset('css/app.css'), array(), $theme->get('Version'));
 	wp_enqueue_style('fonts', csek_rebrand_asset('css/fonts.css'), [], $theme->get('Version'));
+	wp_enqueue_style('animation', csek_rebrand_asset('css/animation.css'), [], $theme->get('Version'));
 	wp_enqueue_script('tailpress', csek_rebrand_asset('js/app.js'), array(), $theme->get('Version'));
+
+	wp_register_script('CircleType', 'https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js', null, null, true);
+	wp_enqueue_script('CircleType');
 }
 
 add_action('wp_enqueue_scripts', 'csek_rebrand_enqueue_scripts');
