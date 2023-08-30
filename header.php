@@ -11,6 +11,7 @@
 </head>
 
 <body <?php body_class('bg-white text-csek-dark antialiased'); ?>>
+	<div id="loading"></div>
 
 	<?php do_action('csek_rebrand_site_before'); ?>
 
@@ -32,7 +33,7 @@
 				<nav class="mx-8">
 					<ul class="flex flex-row gap-8 items-center">
 						<li>
-							<a href="#contact" class="py-2 px-8 rounded-full bg-csek-blue h-11 font-semibold font-montserrat inline-flex items-center">
+							<a href="#contact" class="lets-talk-open py-2 px-8 rounded-full bg-csek-blue h-11 font-semibold font-montserrat inline-flex items-center text-sm">
 								LET'S TALK
 							</a>
 						</li>
@@ -44,7 +45,7 @@
 					</ul>
 				</nav>
 			</div>
-			<h3 id="scroll-down" class="fixed bottom-0 font-syne font-semibold text-sm left-[50%] translate-x-[-50%] translate-y-[50%] text-white z-50 scroll-fade-away">
+			<h3 id="scroll-down" class="fixed bottom-0 font-syne font-semibold text-sm left-[50%] translate-x-[-50%] translate-y-[50%] text-white z-50 scroll-fade-away pointer-events-none">
 				&nbsp;SCROLL DOWN &#x2022; SCROLL DOWN &#x2022; SCROLL DOWN &#x2022;&nbsp;
 			</h3>
 		</header>

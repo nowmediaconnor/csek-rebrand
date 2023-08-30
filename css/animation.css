@@ -20,3 +20,19 @@
         animation-timing-function: linear;
     }
 }
+
+#scroll-down {
+    text-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
+    transition: opacity 0.2s ease-in-out;
+}
+
+#lets-talk {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#lets-talk.open {
+    pointer-events: all;
+    opacity: 1;
+}
