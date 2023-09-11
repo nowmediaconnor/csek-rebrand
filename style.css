@@ -9,3 +9,8 @@ License: MIT
 License URI: https://github.com/jeffreyvr/csek_rebrand/blob/master/LICENSE
 Text Domain: csek_rebrand
 */
+
+article > *:not(.entry-content),
+.entry-content > * {
+    max-width: auto;
+}

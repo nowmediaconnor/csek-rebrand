@@ -50,6 +50,10 @@
   top: 50%
 }
 
+.-z-20 {
+  z-index: -20
+}
+
 .z-10 {
   z-index: 10
 }
@@ -115,20 +119,8 @@
   margin-bottom: 0.25rem
 }
 
-.mb-12 {
-  margin-bottom: 3rem
-}
-
-.mb-4 {
-  margin-bottom: 1rem
-}
-
 .mb-8 {
   margin-bottom: 2rem
-}
-
-.mt-4 {
-  margin-top: 1rem
 }
 
 .box-border {
@@ -175,8 +167,16 @@
   height: 8rem
 }
 
+.h-64 {
+  height: 16rem
+}
+
 .h-8 {
   height: 2rem
+}
+
+.h-\[100vh\] {
+  height: 100vh
 }
 
 .h-\[60vh\] {
@@ -187,12 +187,12 @@
   height: 100%
 }
 
-.h-64 {
-  height: 16rem
-}
-
 .min-h-screen {
   min-height: 100vh
+}
+
+.w-1\/2 {
+  width: 50%
 }
 
 .w-10 {
@@ -227,16 +227,20 @@
   width: 12rem
 }
 
+.w-64 {
+  width: 16rem
+}
+
+.w-\[100vw\] {
+  width: 100vw
+}
+
 .w-\[70\%\] {
   width: 70%
 }
 
 .w-full {
   width: 100%
-}
-
-.w-64 {
-  width: 16rem
 }
 
 .max-w-none {
@@ -251,16 +255,6 @@
   flex-grow: 1
 }
 
-.translate-x-\[-50\%\] {
-  --tw-translate-x: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-}
-
-.translate-y-\[50\%\] {
-  --tw-translate-y: 50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-}
-
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
@@ -268,6 +262,16 @@
 
 .-translate-y-1\/2 {
   --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+.translate-x-\[-50\%\] {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+.translate-y-\[50\%\] {
+  --tw-translate-y: 50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
@@ -391,6 +395,11 @@
   border-color: rgb(96 165 250 / var(--tw-border-opacity))
 }
 
+.border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity))
+}
+
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity))
@@ -399,11 +408,6 @@
 .border-zinc-900 {
   --tw-border-opacity: 1;
   border-color: rgb(24 24 27 / var(--tw-border-opacity))
-}
-
-.border-red-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(239 68 68 / var(--tw-border-opacity))
 }
 
 .bg-black {
@@ -540,6 +544,11 @@
   line-height: 1rem
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem
+}
+
 .font-bold {
   font-weight: 700
 }
@@ -583,11 +592,6 @@
   color: rgb(233 235 234 / var(--tw-text-opacity))
 }
 
-.text-gray-700 {
-  --tw-text-opacity: 1;
-  color: rgb(55 65 81 / var(--tw-text-opacity))
-}
-
 .text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity))
@@ -605,6 +609,11 @@
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale
+}
+
+.brightness-50 {
+  --tw-brightness: brightness(.5);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
 }
 
 .alignfull {
@@ -704,11 +713,19 @@ body {
     font-size: 1.875rem;
     line-height: 2.25rem
   }
-}
 
-@media (min-width: 960px) {
-  .lg\:text-5xl {
+  .md\:text-5xl {
     font-size: 3rem;
+    line-height: 1
+  }
+
+  .md\:text-7xl {
+    font-size: 4.5rem;
+    line-height: 1
+  }
+
+  .md\:text-6xl {
+    font-size: 3.75rem;
     line-height: 1
   }
 }

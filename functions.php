@@ -43,10 +43,13 @@ function csek_rebrand_enqueue_scripts()
 {
 	$theme = wp_get_theme();
 
-	wp_enqueue_style('tailpress', csek_rebrand_asset('css/app.css'), array(), $theme->get('Version'));
+	wp_enqueue_style('tailpress', csek_rebrand_asset('css/app.css'), [], $theme->get('Version'));
 	wp_enqueue_style('fonts', csek_rebrand_asset('css/fonts.css'), [], $theme->get('Version'));
 	wp_enqueue_style('animation', csek_rebrand_asset('css/animation.css'), [], $theme->get('Version'));
-	wp_enqueue_script('tailpress', csek_rebrand_asset('js/app.js'), array(), $theme->get('Version'));
+	wp_enqueue_style('custom', csek_rebrand_asset('css/style.css'), ['tailpress'], $theme->get('Version'));
+
+	wp_enqueue_script('tailpress', csek_rebrand_asset('js/app.js'), [], $theme->get('Version'));
+
 
 	wp_register_script('CircleType', 'https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js', null, null, true);
 	wp_enqueue_script('CircleType');
@@ -122,3 +125,4 @@ add_filter('nav_menu_submenu_css_class', 'csek_rebrand_nav_menu_add_submenu_clas
  * Custom Blocks
  */
 // require get_template_directory() . '/blocks/blocks.php';
+add_theme_support('post-thumbnails');

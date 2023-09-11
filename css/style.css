@@ -1,0 +1,8 @@
+/*
+ * Created on Sun Sep 10 2023
+ * Author: Connor Doman
+ */
+
+article > * {
+    max-width: 100% !important;
+}
