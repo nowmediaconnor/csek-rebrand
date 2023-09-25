@@ -2,8 +2,6 @@
 
 <?php do_action('csek_rebrand_content_end'); ?>
 
-</div>
-
 <?php do_action('csek_rebrand_content_after'); ?>
 
 <canvas id="spline-debug" class="fixed z-[999] left-1/2 top-1/2 w-64 h-64 border border-red-500 -translate-x-1/2 -translate-y-1/2 hidden"></canvas>

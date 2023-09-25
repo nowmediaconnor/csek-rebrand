@@ -86,6 +86,10 @@
   margin: 2rem
 }
 
+.m-0 {
+  margin: 0px
+}
+
 .mx-8 {
   margin-left: 2rem;
   margin-right: 2rem
@@ -123,8 +127,20 @@
   margin-bottom: 2rem
 }
 
+.mt-4 {
+  margin-top: 1rem
+}
+
+.mt-8 {
+  margin-top: 2rem
+}
+
 .box-border {
   box-sizing: border-box
+}
+
+.block {
+  display: block
 }
 
 .flex {
@@ -185,6 +201,11 @@
 
 .h-full {
   height: 100%
+}
+
+.h-max {
+  height: -moz-max-content;
+  height: max-content
 }
 
 .min-h-screen {
@@ -340,6 +361,10 @@
   justify-content: space-between
 }
 
+.gap-2 {
+  gap: 0.5rem
+}
+
 .gap-4 {
   gap: 1rem
 }
@@ -386,8 +411,16 @@
   border-width: 2px
 }
 
+.border-0 {
+  border-width: 0px
+}
+
 .border-b {
   border-bottom-width: 1px
+}
+
+.border-solid {
+  border-style: solid
 }
 
 .border-blue-400 {
@@ -408,6 +441,16 @@
 .border-zinc-900 {
   --tw-border-opacity: 1;
   border-color: rgb(24 24 27 / var(--tw-border-opacity))
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity))
+}
+
+.border-sky-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(14 165 233 / var(--tw-border-opacity))
 }
 
 .bg-black {
@@ -458,6 +501,10 @@
   padding: 1rem
 }
 
+.p-0 {
+  padding: 0px
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem
@@ -493,6 +540,10 @@
   padding-bottom: 1rem
 }
 
+.pb-2 {
+  padding-bottom: 0.5rem
+}
+
 .text-center {
   text-align: center
 }
@@ -508,6 +559,11 @@
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem
 }
 
 .text-5xl {
@@ -542,11 +598,6 @@
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem
 }
 
 .font-bold {
@@ -604,6 +655,10 @@
 
 .underline {
   text-decoration-line: underline
+}
+
+.underline-offset-2 {
+  text-underline-offset: 2px
 }
 
 .antialiased {
@@ -714,18 +769,13 @@ body {
     line-height: 2.25rem
   }
 
-  .md\:text-5xl {
-    font-size: 3rem;
+  .md\:text-6xl {
+    font-size: 3.75rem;
     line-height: 1
   }
 
   .md\:text-7xl {
     font-size: 4.5rem;
-    line-height: 1
-  }
-
-  .md\:text-6xl {
-    font-size: 3.75rem;
     line-height: 1
   }
 }

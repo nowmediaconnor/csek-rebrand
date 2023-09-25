@@ -13,7 +13,7 @@
 <body <?php body_class('bg-white text-csek-dark antialiased'); ?>>
 	<div id="loading"></div>
 
-	<?php do_action('csek_rebrand_site_before'); ?>
+	<!-- <?php do_action('csek_rebrand_site_before'); ?> -->
 
 	<div id="page" class="min-h-screen flex flex-col">
 
@@ -68,11 +68,10 @@
 			<?php endif; ?>
 		</header>
 
-		<div id="content" class="site-content flex-grow">
 
-			<?php if (is_front_page()) : ?>
-			<?php endif; ?>
+		<?php if (is_front_page()) : ?>
+		<?php endif; ?>
 
-			<!-- <?php do_action('csek_rebrand_content_start'); ?> -->
+		<!-- <?php do_action('csek_rebrand_content_start'); ?> -->
 
-			<main>
+		<main id="content" class="site-content flex-grow">
