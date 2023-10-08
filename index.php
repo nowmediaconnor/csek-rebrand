@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="mx-auto my-8">
+<div class="mx-auto">
 
 	<?php if (have_posts()) : ?>
 		<?php

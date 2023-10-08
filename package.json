@@ -34,7 +34,7 @@
         "@wordpress/scripts": "^26.10.0",
         "autoprefixer": "^10.4.13",
         "browser-sync": "^2.26.14",
-        "concurrently": "^6.2.1",
+        "concurrently": "^8.2.1",
         "cross-env": "^6.0.3",
         "esbuild": "^0.12.24",
         "postcss": "^8.4.18",
