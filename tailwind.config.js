@@ -4,14 +4,7 @@ const tailpress = require("@jeffreyvr/tailwindcss-tailpress");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     // important: true,
-    content: [
-        "./*.php",
-        "./**/*.php",
-        "./resources/css/*.css",
-        "./resources/js/*.js",
-        "./safelist.txt",
-        "../../plugins/guten-csek/src/**/*.tsx", // applies Tailwind compilation to the Guten Csek plugin
-    ],
+    content: ["./*.php", "./**/*.php", "./resources/css/*.css", "./resources/js/*.js", "./safelist.txt"],
     theme: {
         container: {
             padding: {

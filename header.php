@@ -66,8 +66,8 @@
 						</div>
 						<img id="featured-image" src="<?php echo $imageSrc; ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover -z-20 absolute top-0 brightness-50" />
 					</div>
-				<?php endif; ?>
-			<?php endif; ?>
+				<?php endif; /* has post thumbnail */ ?>
+			<?php endif; /* is not front page */ ?>
 		</header>
 
 
