@@ -31,6 +31,7 @@
 					</div>
 					CREATIVE
 				</div>
+				<span class="header-scroll-down-target basis-0"></span>
 				<nav class="mx-8">
 					<ul class="flex flex-row gap-8 items-center">
 						<li>
