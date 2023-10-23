@@ -26,6 +26,11 @@
                     "name": "Light",
                     "slug": "csek-light",
                     "color": "#e9ebea"
+                },
+                {
+                    "name": "White",
+                    "slug": "csek-white",
+                    "color": "#ffffff"
                 }
             ]
         },

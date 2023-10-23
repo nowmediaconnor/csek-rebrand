@@ -1,10 +1,10 @@
 (() => {
   // resources/js/app.js
-  window.addEventListener("load", function() {
-    let main_navigation = document.querySelector("#primary-menu");
-    document.querySelector("#primary-menu-toggle").addEventListener("click", function(e) {
+  window.addEventListener("load", () => {
+    const main_navigation = document.querySelector(".csek-nav-menu");
+    document.querySelector("#primary-menu-toggle").addEventListener("click", (e) => {
       e.preventDefault();
-      main_navigation.classList.toggle("hidden");
+      main_navigation.classList.toggle("hidden-nav");
     });
   });
 })();

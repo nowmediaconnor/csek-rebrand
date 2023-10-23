@@ -1,5 +1,7 @@
 <?php
 
+require_once "metadata.php";
+
 /**
  * Theme setup.
  */
@@ -126,3 +128,10 @@ add_filter('nav_menu_submenu_css_class', 'csek_rebrand_nav_menu_add_submenu_clas
  */
 // require get_template_directory() . '/blocks/blocks.php';
 add_theme_support('post-thumbnails');
+
+/* Rgister Custom Nav Menu */
+function register_csek_menu()
+{
+	register_nav_menu('csek-menu', __('Csek Menu'));
+}
+add_action('init', 'register_csek_menu');

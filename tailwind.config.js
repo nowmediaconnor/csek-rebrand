@@ -29,6 +29,9 @@ module.exports = {
             animation: {
                 "spin-slow": "spin 3s linear infinite",
             },
+            spacing: {
+                header: "5rem",
+            },
         },
         screens: {
             xs: "480px",

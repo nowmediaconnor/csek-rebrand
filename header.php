@@ -1,3 +1,8 @@
+<?php
+
+$meta = new PageMetadata();
+
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -18,9 +23,9 @@
 	<div id="page" class="min-h-screen flex flex-col">
 
 		<?php do_action('csek_rebrand_header'); ?>
-		<header class="w-full relative <?php if (!is_front_page() && has_post_thumbnail()) echo 'w-[100vw] h-[100vh]';
-										else echo 'w-full h-20'; ?>">
-			<div class="flex flex-row justify-between items-center px-8 mx-auto z-10 relative">
+		<header class="w-full relative <?php if (!is_front_page() && has_post_thumbnail()) echo 'w-[100vw] h-screen';
+										else echo 'w-full h-header'; ?>">
+			<div class="flex flex-row justify-between items-center px-8 mx-auto relative">
 				<div class="mx-8 flex flex-col justify-center items-center font-syne tracking-[0.4em] text-xs p-4 box-border">
 					<!-- <img src="src/img/CSEK.svg" class="h-8" alt="Csek wordmark" /> -->
 
@@ -40,32 +45,29 @@
 							</a>
 						</li>
 						<li>
-							<a href="#nav" class="rounded-full h-12 w-12 border border-zinc-900 flex flex-row items-center justify-center text-xl">
+							<a href="#nav" id="primary-menu-toggle" class="rounded-full h-12 w-12 border flex flex-row items-center justify-center text-xl <?php echo $meta->has_thumbnail ? "border-csek-white text-csek-white" : "border-csek-dark text-csek-dark"; ?>">
 								<i class="fa-solid fa-bars"></i>
 							</a>
 						</li>
 					</ul>
+					<?php wp_nav_menu(['theme_location' => 'csek-menu', 'container_class' => 'csek-nav-menu hidden-nav',]); ?>
 				</nav>
 			</div>
 			<h3 id="scroll-down" class="fixed bottom-0 font-syne font-semibold text-sm left-[50%] translate-x-[-50%] translate-y-[50%] text-white z-50 scroll-fade-away pointer-events-none">
 				&nbsp;SCROLL DOWN &#x2022; SCROLL DOWN &#x2022; SCROLL DOWN &#x2022;&nbsp;
 			</h3>
-			<?php if (!is_front_page()) : ?>
-				<?php if (has_post_thumbnail()) : $imageSrc = get_the_post_thumbnail_url() ?>
-					<?php
-					$titleParts = explode("|", the_title("", "", false));
-					$clientName = trim($titleParts[0]);
-					if (count($titleParts) > 1) {
-						$postTitle = trim($titleParts[1]);
-					}
-					?>
-					<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center text-center w-[100vw] h-[100vh] text-white">
+			<?php if (!$meta->is_home) : ?>
+				<?php if ($meta->has_thumbnail) : ?>
+					<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center text-center w-[100vw] h-[100vh] text-white -z-10">
 						<div class="w-1/2">
-
-							<h2 class="uppercase font-syne"><?php echo $clientName ?></h2>
-							<h2 class="entry-title text-3xl md:text-6xl font-bold leading-tight mb-1 font-syne"><?php echo $postTitle ?></h2>
+							<?php if ($meta->has_subtitle) : ?>
+								<h2 class="uppercase font-syne"><?php echo $meta->leading_title ?></h2>
+								<h2 class="entry-title text-3xl md:text-6xl font-bold leading-tight mb-1 font-syne"><?php echo $meta->subtitle ?></h2>
+							<?php else : ?>
+								<h2 class="entry-title text-3xl md:text-6xl font-bold leading-tight mb-1 font-syne"><?php echo $meta->leading_title ?></h2>
+							<?php endif; ?>
 						</div>
-						<img id="featured-image" src="<?php echo $imageSrc; ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover -z-20 absolute top-0 brightness-50" />
+						<img id="featured-image" src="<?php echo $meta->thumbnail_url; ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover -z-20 absolute top-0 brightness-50" />
 					</div>
 				<?php endif; /* has post thumbnail */ ?>
 			<?php endif; /* is not front page */ ?>
