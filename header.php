@@ -1,6 +1,7 @@
 <?php
 
-$meta = new PageMetadata();
+$meta = new PageMetadata(get_template_directory_uri());
+$header_class_optional = $meta->needs_contrast() ? "w-[100vw] h-screen" : "w-full h-header";
 
 ?>
 <!DOCTYPE html>
@@ -23,18 +24,13 @@ $meta = new PageMetadata();
 	<div id="page" class="min-h-screen flex flex-col">
 
 		<?php do_action('csek_rebrand_header'); ?>
-		<header class="w-full relative <?php if (!is_front_page() && has_post_thumbnail()) echo 'w-[100vw] h-screen';
-										else echo 'w-full h-header'; ?>">
-			<div class="flex flex-row justify-between items-center px-8 mx-auto relative">
-				<div class="mx-8 flex flex-col justify-center items-center font-syne tracking-[0.4em] text-xs p-4 box-border">
-					<!-- <img src="src/img/CSEK.svg" class="h-8" alt="Csek wordmark" /> -->
-
-					<div class="w-28">
-						<?php if (has_custom_logo()) : ?>
-							<?php the_custom_logo(); ?>
-						<?php endif; ?>
-					</div>
-					CREATIVE
+		<header class="w-full relative <?php echo $header_class_optional; ?>">
+			<div class="flex flex-row justify-between items-center px-8 mx-auto relative w-full h-header">
+				<div class="mx-8 flex flex-col justify-center items-center font-syne">
+					<a href="<?php echo $meta->site_url; ?>" class="w-28 flex flex-col justify-center items-center <?php echo $meta->needs_contrast() ? "text-csek-white" : "text-csek-dark"; ?>">
+						<img src="<?php echo $meta->logo_url(); ?>" />
+						<span class="tracking-[0.4rem] text-xs relative left-[0.2rem]">CREATIVE</span>
+					</a>
 				</div>
 				<span class="header-scroll-down-target basis-0"></span>
 				<nav class="mx-8">
@@ -65,17 +61,13 @@ $meta = new PageMetadata();
 								<h2 class="entry-title text-3xl md:text-6xl font-bold leading-tight mb-1 font-syne"><?php echo $meta->subtitle ?></h2>
 							<?php else : ?>
 								<h2 class="entry-title text-3xl md:text-6xl font-bold leading-tight mb-1 font-syne"><?php echo $meta->leading_title ?></h2>
-							<?php endif; ?>
+							<?php endif; /* has subtitle */ ?>
 						</div>
 						<img id="featured-image" src="<?php echo $meta->thumbnail_url; ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover -z-20 absolute top-0 brightness-50" />
 					</div>
 				<?php endif; /* has post thumbnail */ ?>
 			<?php endif; /* is not front page */ ?>
 		</header>
-
-
-		<?php if (is_front_page()) : ?>
-		<?php endif; ?>
 
 		<!-- <?php do_action('csek_rebrand_content_start'); ?> -->
 

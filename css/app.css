@@ -590,6 +590,14 @@ video {
   top: 5rem;
 }
 
+.left-\[0\.4rem\] {
+  left: 0.4rem;
+}
+
+.left-\[0\.2rem\] {
+  left: 0.2rem;
+}
+
 .-z-10 {
   z-index: -10;
 }
@@ -865,6 +873,10 @@ video {
   align-items: center;
 }
 
+.items-stretch {
+  align-items: stretch;
+}
+
 .justify-start {
   justify-content: flex-start;
 }
@@ -1112,6 +1124,10 @@ video {
 
 .tracking-\[0\.4em\] {
   letter-spacing: 0.4em;
+}
+
+.tracking-\[0\.4rem\] {
+  letter-spacing: 0.4rem;
 }
 
 .text-blue-500 {
