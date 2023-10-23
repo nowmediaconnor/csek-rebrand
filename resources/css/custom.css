@@ -3,7 +3,8 @@ article > *:not(.entry-content),
     @apply mx-auto max-w-content;
 }
 
-.entry-content, .block-editor-block-list__layout {
+.entry-content,
+.block-editor-block-list__layout {
     h1 {
         @apply text-2xl;
     }
@@ -16,7 +17,9 @@ article > *:not(.entry-content),
         @apply text-lg;
     }
 
-    p, ul, ol {
+    p,
+    ul,
+    ol {
         a {
             @apply text-blue-500 underline;
 
@@ -37,6 +40,64 @@ article > *:not(.entry-content),
     ol {
         li {
             @apply list-decimal list-inside;
+        }
+    }
+}
+
+/*
+    Custom Nav Menu
+*/
+
+.hidden-nav {
+    @apply opacity-0 pointer-events-none;
+}
+
+.csek-nav-menu {
+    @apply z-50 absolute top-header right-4 bg-csek-white w-max transition-all duration-300 ease-in-out rounded-lg drop-shadow-lg overflow-hidden;
+
+    & a {
+        @apply underline underline-offset-2 decoration-1 text-csek-dark w-full;
+    }
+
+    & ul.menu {
+        @apply flex flex-col items-start justify-start;
+    }
+
+    & .menu-item {
+        @apply font-montserrat w-full;
+
+        & > a {
+            @apply p-4 inline-block bg-csek-white w-full;
+        }
+    }
+
+    & .menu-item > a:hover {
+        @apply brightness-90;
+    }
+
+    & .menu-item + .menu-item {
+        @apply border-t border-csek-dark;
+    }
+
+    & .current-menu-item > a {
+        @apply bg-csek-blue;
+    }
+
+    & .menu-item-has-children {
+        & .sub-menu {
+            @apply border-t border-csek-blue;
+
+            & .menu-item > a {
+                @apply pl-8;
+            }
+
+            & .menu-item > a:not(.current-menu-item > a) {
+                @apply bg-csek-light;
+            }
+        }
+
+        & .menu-item + .menu-item {
+            @apply border-t border-csek-blue;
         }
     }
 }
