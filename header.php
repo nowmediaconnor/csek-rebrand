@@ -55,7 +55,7 @@ $header_class_optional = $meta->needs_contrast() ? "w-[100vw] h-screen" : "w-ful
 			<?php if (!$meta->is_home) : ?>
 				<?php if ($meta->has_thumbnail) : ?>
 					<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center text-center w-[100vw] h-[100vh] text-white -z-10">
-						<div class="w-1/2">
+						<div class="w-1/3">
 							<?php if ($meta->has_subtitle) : ?>
 								<h2 class="uppercase font-syne"><?php echo $meta->leading_title ?></h2>
 								<h2 class="entry-title text-3xl md:text-6xl font-bold leading-tight mb-1 font-syne"><?php echo $meta->subtitle ?></h2>

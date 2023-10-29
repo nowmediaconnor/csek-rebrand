@@ -48,8 +48,8 @@ article > *:not(.entry-content),
     Custom Nav Menu
 */
 
-.hidden-nav {
-    @apply opacity-0 pointer-events-none;
+.csek-nav-menu.hidden-nav {
+    @apply opacity-0 pointer-events-none -z-20;
 }
 
 .csek-nav-menu {

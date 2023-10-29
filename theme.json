@@ -31,6 +31,11 @@
                     "name": "White",
                     "slug": "csek-white",
                     "color": "#ffffff"
+                },
+                {
+                    "name": "Gray",
+                    "slug": "csek-gray",
+                    "color": "#8B908E"
                 }
             ]
         },

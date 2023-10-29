@@ -6,23 +6,24 @@
 
 <canvas id="spline-debug" class="fixed z-[999] left-1/2 top-1/2 w-64 h-64 border border-red-500 -translate-x-1/2 -translate-y-1/2 hidden"></canvas>
 
-<footer id="colophon" class="site-footer relative bg-csek-dark py-12 h-[60vh] font-syne" role="contentinfo">
+<footer id="colophon" class="site-footer relative bg-csek-dark pt-32 pb-12 h-[60vh] font-syne" role="contentinfo">
 	<!-- <?php do_action('csek_rebrand_footer'); ?> -->
-	<div class="grid grid-cols-2 grid-rows-2 text-csek-light justify-between h-full content-around w-11/12 md:max-w-[75rem] mx-auto">
+	<div class="grid grid-cols-2 grid-rows-2 gap-y-12 text-csek-light justify-between h-full content-around w-11/12 md:max-w-[75rem] mx-auto">
 		<div class="col-span-2 flex flex-row items-center justify-start gap-8">
-			<h2 class="text-6xl my-12 font-bold">Ready for<br />more?</h2>
+			<h3 class="text-6xl my-12 font-bold">Knock on<br />our door<br />anytime.</h3>
 			<a class="lets-talk-open" href="#letstalk">
 				<div class="w-32 h-32 rounded-full bg-csek-red flex flex-row items-center justify-center text-white uppercase font-extrabold text-xs -rotate-[30deg] font-montserrat relative">
-					<span class="absolute">Let&apos;s Talk</span>
+					<span class="absolute">Knock Knock!</span>
 				</div>
 			</a>
 		</div>
-		<div class="self-end">
+		<div class="self-end flex flex-col gap-8">
+			<h3 class="font-syne text-csek-gray font-bold uppercase">Social</h3>
 			<ul class="flex flex-row flex-wrap gap-x-2">
-				<li><a href="#facebook" class="w-10 h-10 border-light border rounded-full flex items-center justify-center"><i class="fab fa-facebook-f"></i></a></li>
-				<li><a href="#twitter" class="w-10 h-10 border-light border rounded-full flex items-center justify-center"><i class="fab fa-twitter"></i></a></li>
-				<li><a href="#youtube" class="w-10 h-10 border-light border rounded-full flex items-center justify-center"><i class="fab fa-youtube"></i></a></li>
-				<li><a href="#linkedin" class="w-10 h-10 border-light border rounded-full flex items-center justify-center"><i class="fab fa-linkedin"></i></a></li>
+				<li><a href="#facebook" class="w-10 h-10 border-light border rounded-full flex items-center justify-center" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
+				<li><a href="#twitter" class="w-10 h-10 border-light border rounded-full flex items-center justify-center" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
+				<li><a href="#linkedin" class="w-10 h-10 border-light border rounded-full flex items-center justify-center" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></li>
+				<li><a href="#youtube" class="w-10 h-10 border-light border rounded-full flex items-center justify-center" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a></li>
 			</ul>
 		</div>
 		<div class="self-end justify-self-end flex flex-col items-end gap-4">
@@ -36,7 +37,7 @@
 	</div>
 	<div id="lets-talk" class="fixed top-0 left-0 w-full h-full bg-black z-[200] flex flex-col justify-center items-center text-white">
 		<a id="lets-talk-close" href="#close" class="absolute top-0 right-0 m-8 text-xl font-bold"><i class="fa fa-x"></i></a>
-		<h1 class="font-syne my-12 text-7xl font-bold">Ready for more?</h1>
+		<h1 class="font-syne my-12 text-7xl font-bold">Ready to chat?</h1>
 		<form class="flex flex-col justify-center items-center gap-4 text-md">
 			<div class="flex flex-row gap-4">
 				<input type="text" placeholder="First name" class="border border-white rounded-lg py-2 px-6 bg-transparent" />
