@@ -101,3 +101,29 @@ article > *:not(.entry-content),
         }
     }
 }
+
+/* Post Grid / List */
+
+.csek-post-grid {
+    @apply my-24;
+
+    & li {
+        @apply flex flex-col justify-between relative hover:drop-shadow-lg transition-all duration-200 ease-in-out;
+
+        &:hover {
+            transform: translateY(-0.25rem);
+        }
+
+        & h2 {
+            @apply font-syne text-2xl font-semibold absolute z-10 text-csek-white p-4 drop-shadow-lg pointer-events-none;
+        }
+
+        & figure {
+            @apply brightness-50 rounded-md overflow-hidden;
+        }
+    }
+
+    & .wp-block-post-template {
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-11/12 lg:w-csek-max mx-auto;
+    }
+}

@@ -32,6 +32,9 @@ module.exports = {
             spacing: {
                 header: "5rem",
             },
+            width: {
+                "csek-max": "75rem",
+            },
         },
         screens: {
             xs: "480px",
