@@ -25,18 +25,18 @@ $header_class_optional = $meta->needs_contrast() ? "w-[100vw] h-screen" : "w-ful
 
 		<?php do_action('csek_rebrand_header'); ?>
 		<header class="w-full relative <?php echo $header_class_optional; ?>">
-			<div class="flex flex-row justify-between items-center px-8 mx-auto relative w-full h-header">
-				<div class="mx-8 flex flex-col justify-center items-center font-syne">
+			<div class="flex flex-row justify-between items-center md:px-8 mx-auto relative w-full h-header">
+				<div class="mx-4 md:mx-8 flex flex-col justify-center items-center font-syne">
 					<a href="<?php echo $meta->site_url; ?>" class="w-28 flex flex-col justify-center items-center <?php echo $meta->needs_contrast() ? "text-csek-white" : "text-csek-dark"; ?>">
 						<img src="<?php echo $meta->logo_url(); ?>" />
 						<span class="tracking-[0.4rem] text-xs relative left-[0.2rem]">CREATIVE</span>
 					</a>
 				</div>
 				<span class="header-scroll-down-target basis-0"></span>
-				<nav class="mx-8">
-					<ul class="flex flex-row gap-8 items-center">
+				<nav class="mx-4 md:mx-8">
+					<ul class="flex flex-row gap-4 md:gap-8 items-center">
 						<li>
-							<a href="#contact" class="lets-talk-open py-2 px-8 rounded-full bg-csek-blue h-11 font-semibold font-montserrat inline-flex items-center text-sm">
+							<a href="#contact" class="lets-talk-open py-2 px-8 rounded-full bg-csek-blue h-11 font-semibold font-montserrat inline-flex items-center text-sm whitespace-nowrap">
 								LET'S TALK
 							</a>
 						</li>
