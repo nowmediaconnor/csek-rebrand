@@ -35,15 +35,15 @@
 			</div>
 		</div>
 	</div>
-	<div id="lets-talk" class="fixed top-0 left-0 w-full h-full bg-black z-[200] flex flex-col justify-center items-center text-white">
-		<a id="lets-talk-close" href="#close" class="absolute top-0 right-0 m-8 text-xl font-bold"><i class="fa fa-x"></i></a>
-		<h1 class="font-syne my-12 text-7xl font-bold">Ready to chat?</h1>
-		<form class="flex flex-col justify-center items-center gap-4 text-md">
-			<div class="flex flex-row gap-4">
+	<div id="lets-talk" class="fixed top-0 left-0 w-screen h-screen bg-black z-[200] flex flex-col justify-center items-center text-white">
+		<a id="lets-talk-close" href="#close" class="absolute top-3 right-0 m-8 text-xl font-bold"><i class="fa fa-x"></i></a>
+		<h1 class="font-syne my-12 mx-4 text-7xl font-bold">Ready to chat?</h1>
+		<form class="flex flex-col justify-center items-center gap-4 text-md w-full px-4 max-w-csek-max">
+			<div class="flex flex-col md:flex-row gap-4 w-full">
 				<input type="text" placeholder="First name" class="border border-white rounded-lg py-2 px-6 bg-transparent" />
 				<input type="text" placeholder="Last name" class="border border-white rounded-lg py-2 px-6 bg-transparent" />
 			</div>
-			<div class="flex flex-row gap-4">
+			<div class="flex flex-col md:flex-row gap-4 w-full">
 				<input type="text" placeholder="Email" class="border border-white rounded-lg py-2 px-6 bg-transparent" />
 				<input type="text" placeholder="Phone" class="border border-white rounded-lg py-2 px-6 bg-transparent" />
 			</div>
