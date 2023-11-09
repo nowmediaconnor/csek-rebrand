@@ -26,10 +26,10 @@ $header_class_optional = $meta->needs_contrast() ? "w-[100vw] h-screen" : "w-ful
 		<?php do_action('csek_rebrand_header'); ?>
 		<header class="w-full relative <?php echo $header_class_optional; ?>">
 			<div class="flex flex-row justify-between items-center md:px-8 mx-auto relative w-full h-header">
-				<div class="mx-4 md:mx-8 flex flex-col justify-center items-center font-syne">
-					<a href="<?php echo $meta->site_url; ?>" class="w-28 flex flex-col justify-center items-center <?php echo $meta->needs_contrast() ? "text-csek-white" : "text-csek-dark"; ?>">
-						<img src="<?php echo $meta->logo_url(); ?>" />
-						<span class="tracking-[0.4rem] text-xs relative left-[0.2rem]">CREATIVE</span>
+				<div class="mx-4 md:mx-8 flex flex-col justify-center items-center font-syne self-center translate-y-[0.1rem]">
+					<a href="<?php echo $meta->site_url; ?>" class="w-28 inline-flex flex-col justify-center items-center h-11 <?php echo $meta->needs_contrast() ? "text-csek-white" : "text-csek-dark"; ?>">
+						<img src="<?php echo $meta->logo_url(); ?>" class="h-8" />
+						<span class="tracking-[0.4rem] text-xs relative left-[0.2rem] leading-none">CREATIVE</span>
 					</a>
 				</div>
 				<span class="header-scroll-down-target basis-0"></span>
@@ -41,7 +41,7 @@ $header_class_optional = $meta->needs_contrast() ? "w-[100vw] h-screen" : "w-ful
 							</a>
 						</li>
 						<li>
-							<a href="#nav" id="primary-menu-toggle" class="rounded-full h-12 w-12 border flex flex-row items-center justify-center text-xl <?php echo $meta->has_thumbnail ? "border-csek-white text-csek-white" : "border-csek-dark text-csek-dark"; ?>">
+							<a href="#nav" id="primary-menu-toggle" class="rounded-full h-11 w-11 border flex flex-row items-center justify-center text-xl <?php echo $meta->has_thumbnail ? "border-csek-white text-csek-white" : "border-csek-dark text-csek-dark"; ?>">
 								<i class="fa-solid fa-bars"></i>
 							</a>
 						</li>

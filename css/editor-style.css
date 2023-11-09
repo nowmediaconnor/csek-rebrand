@@ -54,16 +54,16 @@
   top: 50%
 }
 
+.top-3 {
+  top: 0.75rem
+}
+
 .top-header {
   top: 5rem
 }
 
 .top-2 {
   top: 0.5rem
-}
-
-.top-3 {
-  top: 0.75rem
 }
 
 .-z-10 {
@@ -98,9 +98,9 @@
   margin: 2rem
 }
 
-.mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem
 }
 
 .mx-auto {
@@ -123,9 +123,9 @@
   margin-bottom: 2rem
 }
 
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem
+.my-\[0\.1rem\] {
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem
 }
 
 .mb-1 {
@@ -184,10 +184,6 @@
   height: 100vh
 }
 
-.h-\[60vh\] {
-  height: 60vh
-}
-
 .h-full {
   height: 100%
 }
@@ -205,9 +201,8 @@
   height: fit-content
 }
 
-.h-min {
-  height: -moz-min-content;
-  height: min-content
+.h-8 {
+  height: 2rem
 }
 
 .min-h-screen {
@@ -267,6 +262,10 @@
   width: 100vw
 }
 
+.w-11 {
+  width: 2.75rem
+}
+
 .max-w-sm {
   max-width: 24rem
 }
@@ -294,8 +293,28 @@
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
+.translate-y-2 {
+  --tw-translate-y: 0.5rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
 .translate-y-\[50\%\] {
   --tw-translate-y: 50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+.translate-y-1 {
+  --tw-translate-y: 0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+.translate-y-\[0\.2rem\] {
+  --tw-translate-y: 0.2rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+.translate-y-\[0\.1rem\] {
+  --tw-translate-y: 0.1rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
@@ -356,10 +375,6 @@
   align-items: flex-start
 }
 
-.items-end {
-  align-items: flex-end
-}
-
 .items-center {
   align-items: center
 }
@@ -384,6 +399,10 @@
   gap: 2rem
 }
 
+.gap-6 {
+  gap: 1.5rem
+}
+
 .gap-x-2 {
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem
@@ -398,12 +417,12 @@
   row-gap: 3rem
 }
 
-.self-end {
-  align-self: flex-end
+.self-center {
+  align-self: center
 }
 
-.justify-self-end {
-  justify-self: end
+.overflow-y-scroll {
+  overflow-y: scroll
 }
 
 .whitespace-nowrap {
@@ -536,16 +555,14 @@
   padding-bottom: 1rem
 }
 
-.pb-12 {
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem
+}
+
+.py-12 {
+  padding-top: 3rem;
   padding-bottom: 3rem
-}
-
-.pt-32 {
-  padding-top: 8rem
-}
-
-.pt-4 {
-  padding-top: 1rem
 }
 
 .text-center {
@@ -575,11 +592,6 @@
   line-height: 1
 }
 
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1
-}
-
 .text-7xl {
   font-size: 4.5rem;
   line-height: 1
@@ -597,11 +609,6 @@
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem
 }
 
 .font-bold {
@@ -622,6 +629,10 @@
 
 .uppercase {
   text-transform: uppercase
+}
+
+.leading-none {
+  line-height: 1
 }
 
 .leading-tight {
@@ -801,11 +812,6 @@ body {
     grid-column: span 1 / span 1
   }
 
-  .md\:my-6 {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem
-  }
-
   .md\:mx-8 {
     margin-left: 2rem;
     margin-right: 2rem
@@ -814,6 +820,11 @@ body {
   .md\:my-12 {
     margin-top: 3rem;
     margin-bottom: 3rem
+  }
+
+  .md\:my-6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem
   }
 
   .md\:block {
@@ -828,12 +839,16 @@ body {
     display: grid
   }
 
-  .md\:hidden {
-    display: none
+  .md\:h-10 {
+    height: 2.5rem
   }
 
   .md\:w-1\/2 {
     width: 50%
+  }
+
+  .md\:w-full {
+    width: 100%
   }
 
   .md\:max-w-\[75rem\] {
@@ -875,10 +890,6 @@ body {
   .md\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem
-  }
-
-  .md\:pt-32 {
-    padding-top: 8rem
   }
 
   .md\:pb-12 {
