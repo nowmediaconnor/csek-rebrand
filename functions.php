@@ -2,6 +2,8 @@
 
 require_once "metadata.php";
 
+SiteMetadata::init();
+
 /**
  * Theme setup.
  */

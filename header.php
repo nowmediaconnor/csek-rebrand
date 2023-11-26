@@ -25,30 +25,9 @@ $header_class_optional = $meta->needs_contrast() ? "w-[100vw] h-screen" : "w-ful
 
 		<?php do_action('csek_rebrand_header'); ?>
 		<header class="w-full relative <?php echo $header_class_optional; ?>">
-			<div class="flex flex-row justify-between items-center md:px-8 mx-auto relative w-full h-header">
-				<div class="mx-4 md:mx-8 flex flex-col justify-center items-center font-syne self-center translate-y-[0.1rem]">
-					<a href="<?php echo $meta->site_url; ?>" class="w-28 inline-flex flex-col justify-center items-center h-11 <?php echo $meta->needs_contrast() ? "text-csek-white" : "text-csek-dark"; ?>">
-						<img src="<?php echo $meta->logo_url(); ?>" class="h-8" />
-						<span class="tracking-[0.4rem] text-xs relative left-[0.2rem] leading-none">CREATIVE</span>
-					</a>
-				</div>
-				<span class="header-scroll-down-target basis-0"></span>
-				<nav class="mx-4 md:mx-8">
-					<ul class="flex flex-row gap-4 md:gap-8 items-center">
-						<li>
-							<a href="#contact" class="lets-talk-open py-2 px-8 rounded-full bg-csek-blue h-11 font-semibold font-montserrat inline-flex items-center text-sm whitespace-nowrap">
-								LET'S TALK
-							</a>
-						</li>
-						<li>
-							<a href="#nav" id="primary-menu-toggle" class="rounded-full h-11 w-11 border flex flex-row items-center justify-center text-xl <?php echo $meta->has_thumbnail ? "border-csek-white text-csek-white" : "border-csek-dark text-csek-dark"; ?>">
-								<i class="fa-solid fa-bars"></i>
-							</a>
-						</li>
-					</ul>
-					<?php wp_nav_menu(['theme_location' => 'csek-menu', 'container_class' => 'csek-nav-menu hidden-nav',]); ?>
-				</nav>
-			</div>
+			<?php get_template_part('components/header-elements', null, ['meta' => $meta, 'needs_contrast' => false]); ?>
+			<?php get_template_part('components/nav-menu', null, ['meta' => $meta]); ?>
+			<span class="header-scroll-down-target basis-0"></span>
 			<h3 id="scroll-down" class="fixed bottom-0 font-syne font-semibold text-sm left-[50%] translate-x-[-50%] translate-y-[50%] text-white z-50 scroll-fade-away pointer-events-none">
 				&nbsp;SCROLL DOWN &#x2022; SCROLL DOWN &#x2022; SCROLL DOWN &#x2022;&nbsp;
 			</h3>

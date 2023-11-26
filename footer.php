@@ -17,15 +17,7 @@
 				</div>
 			</a>
 		</div>
-		<div class="md:self-end flex flex-col gap-6 grid-rows-[10rem]">
-			<h3 class="font-syne text-csek-gray font-bold uppercase leading-none">Social</h3>
-			<ul class="flex flex-row flex-wrap gap-x-2">
-				<li><a href="#facebook" class="w-10 h-10 border-light border rounded-full flex items-center justify-center" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
-				<li><a href="#twitter" class="w-10 h-10 border-light border rounded-full flex items-center justify-center" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
-				<li><a href="#linkedin" class="w-10 h-10 border-light border rounded-full flex items-center justify-center" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></li>
-				<li><a href="#youtube" class="w-10 h-10 border-light border rounded-full flex items-center justify-center" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a></li>
-			</ul>
-		</div>
+		<?php get_template_part('components/social-media'); ?>
 		<div class="col-span-2 md:col-span-1 md:self-end md:justify-self-end flex flex-col md:items-end gap-4">
 			<img src="/wp-content/themes/csek-rebrand/img/c.svg" alt="Csek Creative letter C monogram" class="w-24 hidden md:block" />
 			<div class="flex flex-row md:h-10 items-start md:items-center justify-start md:justify-between gap-x-6 flex-wrap text-xs">
