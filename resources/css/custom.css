@@ -53,7 +53,7 @@ article > *:not(.entry-content),
 }
 
 .csek-nav-menu {
-    @apply z-50 absolute top-header left-0 bg-csek-dark w-screen h-screen transition-all duration-300 ease-in-out overflow-hidden;
+    @apply z-50 fixed top-0 left-0 bg-csek-dark w-full h-screen transition-all duration-300 ease-in-out overflow-hidden;
 
     & .nav-container {
         @apply flex flex-row justify-between items-start w-csek-max mx-auto h-full py-32;

@@ -144,9 +144,9 @@ class PageMetadata
         return !$this->is_home && $this->has_thumbnail;
     }
 
-    public function logo_url()
+    public function logo_url($needs_contrast = null)
     {
-        if ($this->needs_contrast()) {
+        if ($needs_contrast === true || $this->needs_contrast()) {
             return $this->site_logo_light_url;
         } else {
             return $this->site_logo_url;
