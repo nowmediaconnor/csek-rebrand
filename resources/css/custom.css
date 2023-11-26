@@ -53,51 +53,65 @@ article > *:not(.entry-content),
 }
 
 .csek-nav-menu {
-    @apply z-50 absolute top-header right-4 bg-csek-white w-max transition-all duration-300 ease-in-out rounded-lg drop-shadow-lg overflow-hidden;
+    @apply z-50 absolute top-header left-0 bg-csek-dark w-screen h-screen transition-all duration-300 ease-in-out overflow-hidden;
 
-    & a {
-        @apply underline underline-offset-2 decoration-1 text-csek-dark w-full;
-    }
+    & .nav-container {
+        @apply flex flex-row justify-between items-start w-csek-max mx-auto h-full py-32;
 
-    & ul.menu {
-        @apply flex flex-col items-start justify-start;
-    }
+        & .csek-wp-nav {
+            @apply text-5xl font-semibold;
 
-    & .menu-item {
-        @apply font-montserrat w-full;
-
-        & > a {
-            @apply p-4 inline-block bg-csek-white w-full;
-        }
-    }
-
-    & .menu-item > a:hover {
-        @apply brightness-90;
-    }
-
-    & .menu-item + .menu-item {
-        @apply border-t border-csek-dark;
-    }
-
-    & .current-menu-item > a {
-        @apply bg-csek-blue;
-    }
-
-    & .menu-item-has-children {
-        & .sub-menu {
-            @apply border-t border-csek-blue;
-
-            & .menu-item > a {
-                @apply pl-8;
+            & a {
+                @apply font-syne underline underline-offset-2 decoration-1 text-csek-white w-max transition-colors duration-200 ease-in-out;
             }
 
-            & .menu-item > a:not(.current-menu-item > a) {
-                @apply bg-csek-light;
+            & ul.menu {
+                @apply flex flex-col items-start justify-start;
+            }
+
+            & .menu-item {
+                @apply font-montserrat w-full;
+
+                & > a {
+                    @apply p-4 inline-block w-full;
+                }
+            }
+
+            & .menu-item > a:hover {
+                @apply text-csek-red;
+            }
+
+            & .menu-item + .menu-item {
+                @apply border-t border-csek-dark;
+            }
+
+            & .current-menu-item > a {
+                @apply text-csek-red;
+            }
+
+            & .menu-item-has-children {
+                & .sub-menu {
+                    @apply relative left-8;
+
+                    & .menu-item > a {
+                        /* @apply pl-8; */
+                    }
+
+                    & .menu-item > a:not(.current-menu-item > a) {
+                    }
+                }
+
+                & .menu-item + .menu-item {
+                }
             }
         }
 
-        & .menu-item + .menu-item {
-            @apply border-t border-csek-blue;
+        & .addresses {
+            @apply flex flex-col items-start justify-start p-4 gap-12;
+
+            & .contact-info {
+                @apply text-csek-white font-montserrat text-sm;
+            }
         }
     }
 }

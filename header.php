@@ -46,7 +46,14 @@ $header_class_optional = $meta->needs_contrast() ? "w-[100vw] h-screen" : "w-ful
 							</a>
 						</li>
 					</ul>
-					<?php wp_nav_menu(['theme_location' => 'csek-menu', 'container_class' => 'csek-nav-menu hidden-nav',]); ?>
+					<div class="csek-nav-menu hidden-nav">
+						<div class="nav-container">
+							<?php wp_nav_menu(['theme_location' => 'csek-menu', 'container_class' => 'csek-wp-nav',]); ?>
+							<div class="addresses">
+								<?php echo SiteMetadata::address_html() ?>
+							</div>
+						</div>
+					</div>
 				</nav>
 			</div>
 			<h3 id="scroll-down" class="fixed bottom-0 font-syne font-semibold text-sm left-[50%] translate-x-[-50%] translate-y-[50%] text-white z-50 scroll-fade-away pointer-events-none">

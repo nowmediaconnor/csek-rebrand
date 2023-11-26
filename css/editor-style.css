@@ -42,10 +42,6 @@
   right: 0px
 }
 
-.right-4 {
-  right: 1rem
-}
-
 .top-0 {
   top: 0px
 }
@@ -54,16 +50,16 @@
   top: 50%
 }
 
-.top-3 {
-  top: 0.75rem
+.top-2 {
+  top: 0.5rem
 }
 
 .top-header {
   top: 5rem
 }
 
-.top-2 {
-  top: 0.5rem
+.left-8 {
+  left: 2rem
 }
 
 .-z-10 {
@@ -123,11 +119,6 @@
   margin-bottom: 2rem
 }
 
-.my-\[0\.1rem\] {
-  margin-top: 0.1rem;
-  margin-bottom: 0.1rem
-}
-
 .mb-1 {
   margin-bottom: 0.25rem
 }
@@ -168,16 +159,16 @@
   height: 2.75rem
 }
 
-.h-12 {
-  height: 3rem
-}
-
 .h-32 {
   height: 8rem
 }
 
 .h-64 {
   height: 16rem
+}
+
+.h-8 {
+  height: 2rem
 }
 
 .h-\[100vh\] {
@@ -196,15 +187,6 @@
   height: 100vh
 }
 
-.h-fit {
-  height: -moz-fit-content;
-  height: fit-content
-}
-
-.h-8 {
-  height: 2rem
-}
-
 .min-h-screen {
   min-height: 100vh
 }
@@ -217,12 +199,12 @@
   width: 2.5rem
 }
 
-.w-11\/12 {
-  width: 91.666667%
+.w-11 {
+  width: 2.75rem
 }
 
-.w-12 {
-  width: 3rem
+.w-11\/12 {
+  width: 91.666667%
 }
 
 .w-16 {
@@ -262,8 +244,8 @@
   width: 100vw
 }
 
-.w-11 {
-  width: 2.75rem
+.w-csek-max {
+  width: 75rem
 }
 
 .max-w-sm {
@@ -293,28 +275,13 @@
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
-.translate-y-2 {
-  --tw-translate-y: 0.5rem;
+.translate-y-\[0\.1rem\] {
+  --tw-translate-y: 0.1rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
 .translate-y-\[50\%\] {
   --tw-translate-y: 50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-}
-
-.translate-y-1 {
-  --tw-translate-y: 0.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-}
-
-.translate-y-\[0\.2rem\] {
-  --tw-translate-y: 0.2rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-}
-
-.translate-y-\[0\.1rem\] {
-  --tw-translate-y: 0.1rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
@@ -395,12 +362,12 @@
   gap: 1rem
 }
 
-.gap-8 {
-  gap: 2rem
-}
-
 .gap-6 {
   gap: 1.5rem
+}
+
+.gap-8 {
+  gap: 2rem
 }
 
 .gap-x-2 {
@@ -419,6 +386,10 @@
 
 .self-center {
   align-self: center
+}
+
+.overflow-hidden {
+  overflow: hidden
 }
 
 .overflow-y-scroll {
@@ -545,6 +516,11 @@
   padding-right: 2rem
 }
 
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem
+}
+
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem
@@ -558,11 +534,6 @@
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem
-}
-
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem
 }
 
 .text-center {
@@ -715,12 +686,22 @@
   transition-duration: 150ms
 }
 
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms
+}
+
 .duration-200 {
   transition-duration: 200ms
 }
 
 .duration-300 {
   transition-duration: 300ms
+}
+
+.duration-100 {
+  transition-duration: 100ms
 }
 
 .ease-in-out {
