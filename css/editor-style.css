@@ -62,6 +62,30 @@
   left: 2rem
 }
 
+.-left-full {
+  left: -100%
+}
+
+.-left-4 {
+  left: -1rem
+}
+
+.top-\[1em\] {
+  top: 1em
+}
+
+.top-\[1rem\] {
+  top: 1rem
+}
+
+.top-4 {
+  top: 1rem
+}
+
+.-left-8 {
+  left: -2rem
+}
+
 .-z-10 {
   z-index: -10
 }
@@ -368,6 +392,10 @@
 
 .gap-8 {
   gap: 2rem
+}
+
+.gap-12 {
+  gap: 3rem
 }
 
 .gap-x-2 {

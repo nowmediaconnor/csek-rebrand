@@ -49,8 +49,9 @@ $header_class_optional = $meta->needs_contrast() ? "w-[100vw] h-screen" : "w-ful
 					<div class="csek-nav-menu hidden-nav">
 						<div class="nav-container">
 							<?php wp_nav_menu(['theme_location' => 'csek-menu', 'container_class' => 'csek-wp-nav',]); ?>
-							<div class="addresses">
-								<?php echo SiteMetadata::address_html() ?>
+							<div class="flex flex-col gap-12">
+								<?php get_template_part('components/addresses'); ?>
+								<?php get_template_part('components/social-media'); ?>
 							</div>
 						</div>
 					</div>

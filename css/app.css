@@ -554,6 +554,10 @@ video {
   position: relative;
 }
 
+.-left-8 {
+  left: -2rem;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -588,6 +592,10 @@ video {
 
 .top-2 {
   top: 0.5rem;
+}
+
+.top-4 {
+  top: 1rem;
 }
 
 .top-header {
@@ -888,6 +896,10 @@ video {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-12 {
+  gap: 3rem;
 }
 
 .gap-4 {
@@ -1342,7 +1354,6 @@ article > *:not(.entry-content),
 
 .csek-nav-menu.hidden-nav {
   pointer-events: none;
-  z-index: -20;
   opacity: 0;
 }
 
@@ -1399,9 +1410,11 @@ article > *:not(.entry-content),
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  gap: 2rem;
 }
 
 .csek-nav-menu .nav-container .csek-wp-nav .menu-item {
+  position: relative;
   width: 100%;
   font-family: Montserrat, sans-serif;
 }
@@ -1425,6 +1438,15 @@ article > *:not(.entry-content),
 
 .csek-nav-menu .nav-container .csek-wp-nav .current-menu-item > a {
   --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.csek-nav-menu .nav-container .csek-wp-nav .current-menu-item::after {
+  content: "\203A";
+  position: absolute;
+  left: -2rem;
+  top: 1rem;
+  --tw-text-opacity: 1;
   color: rgb(244 2 1 / var(--tw-text-opacity));
 }
 
@@ -1443,16 +1465,7 @@ article > *:not(.entry-content),
 .csek-nav-menu .nav-container .csek-wp-nav .menu-item-has-children .menu-item + .menu-item {
 }
 
-.csek-nav-menu .nav-container .addresses {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 3rem;
-  padding: 1rem;
-}
-
-.csek-nav-menu .nav-container .addresses .contact-info {
+& .addresses .contact-info {
   font-family: Montserrat, sans-serif;
   font-size: 0.875rem;
   line-height: 1.25rem;

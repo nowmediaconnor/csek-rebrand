@@ -66,9 +66,14 @@ class SiteMetadata
 {
     public static ContactInfo $csek_creative_address;
     public static ContactInfo $vovia_address;
+    private static bool $initialized = false;
 
     public static function init()
     {
+        if (self::$initialized) {
+            return;
+        }
+
         self::$csek_creative_address = new ContactInfo(
             "Head Office",
             "1631 Dickson Ave",
@@ -90,6 +95,8 @@ class SiteMetadata
             null,
             "(403) 265-2036",
         );
+
+        self::$initialized = true;
     }
 
     public static function address_html()
