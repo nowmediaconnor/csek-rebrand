@@ -538,6 +538,10 @@ video {
   pointer-events: none;
 }
 
+.pointer-events-auto {
+  pointer-events: auto;
+}
+
 .static {
   position: static;
 }
@@ -612,6 +616,10 @@ video {
 
 .z-50 {
   z-index: 50;
+}
+
+.z-\[100\] {
+  z-index: 100;
 }
 
 .z-\[200\] {
@@ -1004,6 +1012,11 @@ video {
   background-color: rgb(244 2 1 / var(--tw-bg-opacity));
 }
 
+.bg-csek-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -1223,12 +1236,26 @@ video {
   transition-duration: 150ms;
 }
 
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-1000 {
+  transition-duration: 1000ms;
+}
+
 .duration-200 {
   transition-duration: 200ms;
 }
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
 }
 
 .ease-in-out {
@@ -1534,6 +1561,40 @@ article > *:not(.entry-content),
     width: 75rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+/* Loading Screen */
+
+#loading {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  height: 100vh;
+  width: 100vw;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  transition-property: opacity;
+  transition-duration: 1000ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#loading.complete {
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Scroll Down Spinner */
+
+#scroll-down {
+  text-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+/* Let's Talk Screen */
+
+#lets-talk.open {
+  pointer-events: auto;
+  opacity: 1;
 }
 
 .hover\:drop-shadow-lg:hover {
