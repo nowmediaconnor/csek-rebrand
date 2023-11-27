@@ -27,7 +27,7 @@
 			</div>
 		</div>
 	</div>
-	<?php get_template_part('components/lets-talk', 'form'); ?>
+	<?php get_template_part('components/wufoo-lets-talk', 'form'); ?>
 </footer>
 
 </div>
