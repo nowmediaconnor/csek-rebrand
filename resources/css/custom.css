@@ -167,3 +167,20 @@ article > *:not(.entry-content),
 #lets-talk.open {
     @apply pointer-events-auto opacity-100;
 }
+
+/* Hide Wordpress Header */
+
+.toggle-header {
+    @apply fixed bottom-6 right-6 z-50 bg-csek-white w-4 h-4 rounded-full flex items-center justify-center cursor-pointer;
+    transform-style: preserve-3d;
+}
+
+.toggle-header::before {
+    content: "Toggle WP toolbar";
+    @apply absolute -bottom-2 -right-2 bg-csek-white px-2 pr-8 h-8 z-40 rounded-sm drop-shadow-md text-xs whitespace-nowrap flex items-center justify-start;
+    transform: translateZ(-1px);
+}
+
+.hide-header {
+    @apply h-0 opacity-0 pointer-events-none;
+}
