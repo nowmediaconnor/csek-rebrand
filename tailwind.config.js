@@ -1,6 +1,13 @@
 const theme = require("./theme.json");
 const tailpress = require("@jeffreyvr/tailwindcss-tailpress");
 
+const customWidths = {
+    "csek-max": "75rem",
+    "csek-1/2": "37.5rem",
+    "csek-2/3": "50rem",
+    serif: "12rem",
+};
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     // important: true,
@@ -33,7 +40,10 @@ module.exports = {
                 header: "5rem",
             },
             width: {
-                "csek-max": "75rem",
+                ...customWidths,
+            },
+            maxWidth: {
+                ...customWidths,
             },
         },
         screens: {

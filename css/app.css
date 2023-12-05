@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -558,12 +558,24 @@ video {
   position: relative;
 }
 
+.-bottom-2 {
+  bottom: -0.5rem;
+}
+
 .-left-8 {
   left: -2rem;
 }
 
+.-right-2 {
+  right: -0.5rem;
+}
+
 .bottom-0 {
   bottom: 0px;
+}
+
+.bottom-6 {
+  bottom: 1.5rem;
 }
 
 .left-0 {
@@ -584,6 +596,10 @@ video {
 
 .right-0 {
   right: 0px;
+}
+
+.right-6 {
+  right: 1.5rem;
 }
 
 .top-0 {
@@ -612,6 +628,10 @@ video {
 
 .z-10 {
   z-index: 10;
+}
+
+.z-40 {
+  z-index: 40;
 }
 
 .z-50 {
@@ -691,6 +711,10 @@ video {
   display: none;
 }
 
+.h-0 {
+  height: 0px;
+}
+
 .h-1 {
   height: 0.25rem;
 }
@@ -705,6 +729,10 @@ video {
 
 .h-32 {
   height: 8rem;
+}
+
+.h-4 {
+  height: 1rem;
 }
 
 .h-64 {
@@ -767,8 +795,16 @@ video {
   width: 8rem;
 }
 
+.w-4 {
+  width: 1rem;
+}
+
 .w-64 {
   width: 16rem;
+}
+
+.w-8 {
+  width: 2rem;
 }
 
 .w-\[100vw\] {
@@ -790,6 +826,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.max-w-csek-max {
+  max-width: 75rem;
 }
 
 .max-w-sm {
@@ -960,6 +1000,15 @@ video {
   border-radius: 0.375rem;
 }
 
+.rounded-sm {
+  border-radius: 0.125rem;
+}
+
+.rounded-r-lg {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -970,6 +1019,10 @@ video {
 
 .border-t {
   border-top-width: 1px;
+}
+
+.border-solid {
+  border-style: solid;
 }
 
 .border-csek-dark {
@@ -1040,6 +1093,11 @@ video {
   padding: 1rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -1080,6 +1138,10 @@ video {
   padding-bottom: 2rem;
 }
 
+.pr-8 {
+  padding-right: 2rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1110,6 +1172,16 @@ video {
 .text-7xl {
   font-size: 4.5rem;
   line-height: 1;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .text-sm {
@@ -1178,6 +1250,11 @@ video {
   color: rgb(233 235 234 / var(--tw-text-opacity));
 }
 
+.text-csek-red {
+  --tw-text-opacity: 1;
+  color: rgb(244 2 1 / var(--tw-text-opacity));
+}
+
 .text-csek-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1221,6 +1298,11 @@ video {
 
 .drop-shadow-lg {
   --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.drop-shadow-md {
+  --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
@@ -1319,6 +1401,30 @@ video {
 .wp-caption-text {
   font-size: 0.875rem;
   color: #4b5563;
+}
+
+/*
+ * Created on Mon Dec 04 2023
+ * Author: Connor Doman
+ */
+
+/* Reset Some Styles */
+
+select {
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.7);
+  border-radius: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-right: 1rem;
+  padding-left: 0.5rem;
+  border: 0;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.7em top 50%;
+  background-size: 0.65em auto;
 }
 
 article > *:not(.entry-content),
@@ -1595,6 +1701,166 @@ article > *:not(.entry-content),
 #lets-talk.open {
   pointer-events: auto;
   opacity: 1;
+}
+
+/* Hide Wordpress Header */
+
+.toggle-header {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  display: flex;
+  height: 1rem;
+  width: 1rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  transform-style: preserve-3d;
+}
+
+.toggle-header::before {
+  content: "Toggle WP toolbar";
+  position: absolute;
+  bottom: -0.5rem;
+  right: -0.5rem;
+  z-index: 40;
+  display: flex;
+  height: 2rem;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap;
+  border-radius: 0.125rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-left: 0.5rem;
+  padding-right: 2rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  transform: translateZ(-1px);
+}
+
+.hide-header {
+  pointer-events: none;
+  height: 0px;
+  opacity: 0;
+}
+
+/*
+ * Created on Mon Dec 04 2023
+ * Author: Connor Doman
+ */
+
+#lets-talk {
+  --select-dropdown: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.292893 0.292893C0.683417 -0.097631 1.31658 -0.097631 1.70711 0.292893L5 3.58579L8.29289 0.292893C8.68342 -0.0976311 9.31658 -0.0976311 9.70711 0.292893C10.0976 0.683417 10.0976 1.31658 9.70711 1.70711L5.70711 5.70711C5.31658 6.09763 4.68342 6.09763 4.29289 5.70711L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683418 0.292893 0.292893Z' fill='rgba(255, 255, 255, 1)'/%3E%3C/svg%3E");
+}
+
+#lets-talk .gform_wrapper {
+  width: 91.666667%;
+  max-width: 75rem;
+}
+
+#lets-talk .gform_heading {
+  display: none;
+}
+
+#lets-talk .gfield_required_asterisk {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(244 2 1 / var(--tw-text-opacity));
+}
+
+#lets-talk .lets-talk-form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#lets-talk .lets-talk-form .gfield_label:not(#lets-talk .lets-talk-form.gform-field-label) {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+#lets-talk .lets-talk-form label.gform-field-label {
+  font-family: Montserrat, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+#lets-talk .lets-talk-form input[type="text"],
+        #lets-talk .lets-talk-form input[type="tel"],
+        #lets-talk .lets-talk-form input[type="email"],
+        #lets-talk .lets-talk-form textarea,
+        #lets-talk .lets-talk-form .gfield_select {
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  background-color: transparent;
+  font-family: Montserrat, sans-serif;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+#lets-talk .lets-talk-form .gfield_select {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: var(--select-dropdown);
+}
+
+#lets-talk .lets-talk-form .gfield_select:before {
+  content: ">";
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 2rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(244 2 1 / var(--tw-text-opacity));
+}
+
+#lets-talk .lets-talk-form .gfield_description {
+  font-family: Montserrat, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(233 235 234 / var(--tw-text-opacity));
+}
+
+#lets-talk .lets-talk-form input[type="submit"] {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 2 1 / var(--tw-bg-opacity));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-family: Syne, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:drop-shadow-lg:hover {
