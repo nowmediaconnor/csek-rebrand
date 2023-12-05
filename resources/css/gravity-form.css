@@ -1,0 +1,49 @@
+/*
+ * Created on Mon Dec 04 2023
+ * Author: Connor Doman
+ */
+
+#lets-talk {
+    & .gform_wrapper {
+        @apply w-11/12 md:w-full max-w-csek-max;
+    }
+
+    & .gform_heading {
+        @apply flex flex-row w-full my-4;
+
+        & .gform_required_legend {
+            @apply inline-block justify-self-end;
+        }
+    }
+
+    & .gfield_required_asterisk {
+        @apply text-csek-red text-lg;
+    }
+
+    & .lets-talk-form {
+        @apply flex flex-col gap-4 w-full md:w-csek-max;
+
+        & .gfield_label:not(&.gform-field-label) {
+            @apply text-csek-white font-montserrat font-bold text-xl;
+        }
+
+        & label.gform-field-label {
+            @apply text-csek-white font-montserrat text-sm;
+        }
+
+        & input[type="text"],
+        & input[type="tel"],
+        & input[type="email"],
+        & textarea {
+            @apply bg-transparent border border-solid border-csek-white rounded-lg text-csek-white font-montserrat;
+        }
+
+        & .gfield_description {
+            @apply text-csek-light font-montserrat text-sm;
+        }
+
+        & input[type="submit"] {
+            @apply bg-csek-red text-csek-white font-syne font-bold text-lg py-2 px-8 rounded-full mx-auto;
+        }
+    }
+}

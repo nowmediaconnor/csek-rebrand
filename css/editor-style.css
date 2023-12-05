@@ -288,6 +288,10 @@
   width: 100vw
 }
 
+.max-w-csek-max {
+  max-width: 75rem
+}
+
 .max-w-sm {
   max-width: 24rem
 }
@@ -472,6 +476,10 @@
   border-top-width: 1px
 }
 
+.border-solid {
+  border-style: solid
+}
+
 .border-csek-dark {
   --tw-border-opacity: 1;
   border-color: rgb(19 19 19 / var(--tw-border-opacity))
@@ -585,10 +593,6 @@
   padding-bottom: 2rem
 }
 
-.pr-4 {
-  padding-right: 1rem
-}
-
 .pr-8 {
   padding-right: 2rem
 }
@@ -628,6 +632,11 @@
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem
 }
 
 .text-sm {
@@ -694,6 +703,11 @@
 .text-csek-light {
   --tw-text-opacity: 1;
   color: rgb(233 235 234 / var(--tw-text-opacity))
+}
+
+.text-csek-red {
+  --tw-text-opacity: 1;
+  color: rgb(244 2 1 / var(--tw-text-opacity))
 }
 
 .text-csek-white {

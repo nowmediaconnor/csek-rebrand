@@ -824,6 +824,10 @@ video {
   width: 100vw;
 }
 
+.max-w-csek-max {
+  max-width: 75rem;
+}
+
 .max-w-sm {
   max-width: 24rem;
 }
@@ -1008,6 +1012,10 @@ video {
   border-top-width: 1px;
 }
 
+.border-solid {
+  border-style: solid;
+}
+
 .border-csek-dark {
   --tw-border-opacity: 1;
   border-color: rgb(19 19 19 / var(--tw-border-opacity));
@@ -1162,6 +1170,11 @@ video {
   line-height: 1.5rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1226,6 +1239,11 @@ video {
 .text-csek-light {
   --tw-text-opacity: 1;
   color: rgb(233 235 234 / var(--tw-text-opacity));
+}
+
+.text-csek-red {
+  --tw-text-opacity: 1;
+  color: rgb(244 2 1 / var(--tw-text-opacity));
 }
 
 .text-csek-white {
@@ -1698,6 +1716,112 @@ article > *:not(.entry-content),
   pointer-events: none;
   height: 0px;
   opacity: 0;
+}
+
+/*
+ * Created on Mon Dec 04 2023
+ * Author: Connor Doman
+ */
+
+#lets-talk .gform_wrapper {
+  width: 91.666667%;
+  max-width: 75rem;
+}
+
+@media (min-width: 782px) {
+  #lets-talk .gform_wrapper {
+    width: 100%;
+  }
+}
+
+#lets-talk .gform_heading {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+#lets-talk .gform_heading .gform_required_legend {
+  display: inline-block;
+  justify-self: end;
+}
+
+#lets-talk .gfield_required_asterisk {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(244 2 1 / var(--tw-text-opacity));
+}
+
+#lets-talk .lets-talk-form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 782px) {
+  #lets-talk .lets-talk-form {
+    width: 75rem;
+  }
+}
+
+#lets-talk .lets-talk-form .gfield_label:not(#lets-talk .lets-talk-form.gform-field-label) {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+#lets-talk .lets-talk-form label.gform-field-label {
+  font-family: Montserrat, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+#lets-talk .lets-talk-form input[type="text"],
+        #lets-talk .lets-talk-form input[type="tel"],
+        #lets-talk .lets-talk-form input[type="email"],
+        #lets-talk .lets-talk-form textarea {
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  background-color: transparent;
+  font-family: Montserrat, sans-serif;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+#lets-talk .lets-talk-form .gfield_description {
+  font-family: Montserrat, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(233 235 234 / var(--tw-text-opacity));
+}
+
+#lets-talk .lets-talk-form input[type="submit"] {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 2 1 / var(--tw-bg-opacity));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-family: Syne, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:drop-shadow-lg:hover {
