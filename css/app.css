@@ -1766,16 +1766,7 @@ article > *:not(.entry-content),
 }
 
 #lets-talk .gform_heading {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-}
-
-#lets-talk .gform_heading .gform_required_legend {
-  display: inline-block;
-  justify-self: end;
+  display: none;
 }
 
 #lets-talk .gfield_required_asterisk {

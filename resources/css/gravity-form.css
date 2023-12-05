@@ -11,11 +11,7 @@
     }
 
     & .gform_heading {
-        @apply flex flex-row w-full my-4;
-
-        & .gform_required_legend {
-            @apply inline-block justify-self-end;
-        }
+        @apply hidden;
     }
 
     & .gfield_required_asterisk {
