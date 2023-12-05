@@ -5,7 +5,7 @@
 
 #lets-talk {
     & .gform_wrapper {
-        @apply w-11/12 md:w-full max-w-csek-max;
+        @apply w-11/12 max-w-csek-max;
     }
 
     & .gform_heading {
@@ -21,7 +21,7 @@
     }
 
     & .lets-talk-form {
-        @apply flex flex-col gap-4 w-full md:w-csek-max;
+        @apply flex flex-col gap-4 w-full;
 
         & .gfield_label:not(&.gform-field-label) {
             @apply text-csek-white font-montserrat font-bold text-xl;
