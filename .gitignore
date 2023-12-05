@@ -2,5 +2,7 @@
 /.idea
 /.vscode
 /.nova
+css/app.css
+css/editor-style.css
 
 .DS_Store
