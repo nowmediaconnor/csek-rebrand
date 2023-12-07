@@ -25,7 +25,7 @@
 			<?php get_template_part('components/addresses-footer'); ?>
 		</div>
 		<div class="col-span-1 col-start-5 flex justify-end items-center">
-			<i class="fa-brands fa-google"></i>
+			<?php get_template_part("components/google-partner-badge") ?>
 		</div>
 		<div class="col-span-3 flex items-end">
 			<?php get_template_part('components/nowmedia-companies'); ?>
