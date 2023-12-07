@@ -90,7 +90,7 @@ article > *:not(.entry-content),
             }
 
             & ul.menu {
-                @apply flex flex-col items-start justify-start gap-8;
+                @apply flex flex-col items-start justify-start gap-4;
             }
 
             & .menu-item {
@@ -111,12 +111,7 @@ article > *:not(.entry-content),
 
             & .current-menu-item {
                 & > a {
-                    @apply text-csek-white;
-                }
-
-                &::after {
-                    content: "\203A";
-                    @apply absolute -left-8 top-4 text-csek-red;
+                    @apply text-csek-red;
                 }
             }
 
