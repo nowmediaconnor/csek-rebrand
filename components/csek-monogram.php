@@ -5,4 +5,4 @@
  * Author: Connor Doman
  */
 ?>
-<img src="/wp-content/themes/csek-rebrand/img/c.svg" alt="Csek Creative letter C monogram" class="w-24 hidden md:block" />
+<img src="/wp-content/themes/csek-rebrand/img/c.svg" alt="Csek Creative letter C monogram" class="w-20 hidden md:block" />
