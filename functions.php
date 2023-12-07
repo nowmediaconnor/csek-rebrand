@@ -143,3 +143,36 @@ function register_csek_menu()
 	register_nav_menu('csek-menu', __('Csek Menu'));
 }
 add_action('init', 'register_csek_menu');
+
+
+/* Generate <li>s from array */
+
+function generate_list_items(array $items): string
+{
+	$li = '';
+	foreach ($items as $item) {
+		$li .= '<li>' . $item . '</li>';
+	}
+	return $li;
+}
+
+function wrap_in_links(array $items, array $links, bool $external = false): array
+{
+	$target = $external ? 'target="_blank" rel="noopener noreferrer"' : '';
+	$wrapped = [];
+	foreach ($items as $key => $item) {
+		$wrapped[] = '<a href="' . $links[$key] . '"' . $target . '>' . $item . '</a>';
+	}
+	return $wrapped;
+}
+
+function generate_img_items(array $items): array
+{
+	$images = [];
+	foreach ($items as $item) {
+		$src = $item['src'];
+		$alt = $item['alt'];
+		$images[] = '<img src="' . $src . '" alt="' . $alt . '" />';
+	}
+	return $images;
+}

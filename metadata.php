@@ -48,7 +48,7 @@ class ContactInfo
                 $html .= "<span class='state'>" . $this->state . "</span>";
             }
             if ($this->zip) {
-                $html .= "<span class='zip'>" . $this->zip . "</span>";
+                $html .= " <span class='zip'>" . $this->zip . "</span>";
             }
             $html .= "</div>";
         }

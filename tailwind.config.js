@@ -45,6 +45,9 @@ module.exports = {
             maxWidth: {
                 ...customWidths,
             },
+            gridTemplateRows: {
+                footer: "2fr 1fr 1fr",
+            },
         },
         screens: {
             xs: "480px",
