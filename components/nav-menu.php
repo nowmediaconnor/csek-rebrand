@@ -12,7 +12,7 @@ $meta = $args['meta'];
     <?php get_template_part('components/header-elements', null, ['meta' => $meta, 'needs_contrast' => true, 'close_button' => true]); ?>
     <div class="nav-container">
         <?php wp_nav_menu(['theme_location' => 'csek-menu', 'container_class' => 'csek-wp-nav',]); ?>
-        <div class="flex flex-col gap-12">
+        <div class="flex flex-col gap-8 md:gap-12">
             <?php get_template_part('components/addresses'); ?>
             <?php get_template_part('components/social-media'); ?>
         </div>

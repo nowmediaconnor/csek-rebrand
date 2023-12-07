@@ -80,7 +80,7 @@ article > *:not(.entry-content),
     @apply z-50 fixed top-0 left-0 bg-csek-dark w-full h-screen transition-all duration-300 ease-in-out overflow-hidden;
 
     & .nav-container {
-        @apply flex flex-row justify-between items-start w-csek-max mx-auto h-full py-32;
+        @apply flex flex-col md:flex-row justify-start gap-8 md:justify-between items-start w-10/12 max-w-csek-max mx-auto h-full md:py-32;
 
         & .csek-wp-nav {
             @apply text-5xl font-semibold;
@@ -97,7 +97,7 @@ article > *:not(.entry-content),
                 @apply relative font-montserrat w-full;
 
                 & > a {
-                    @apply p-4 inline-block w-full;
+                    @apply inline-block w-full;
                 }
             }
 
