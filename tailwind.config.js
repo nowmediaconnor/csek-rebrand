@@ -47,6 +47,7 @@ module.exports = {
             },
             gridTemplateRows: {
                 footer: "2fr 1fr 1fr",
+                "footer-mobile": "1fr 1fr 1fr 1fr 3rem",
             },
         },
         screens: {
