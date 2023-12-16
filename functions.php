@@ -147,32 +147,37 @@ add_action('init', 'register_csek_menu');
 
 /* Generate <li>s from array */
 
-function generate_list_items(array $items): string
+function generate_list_items(array $items, array $classes = []): string
 {
+	$classNames = count($classes) > 0 ? implode(' ', $classes) : "";
 	$li = '';
 	foreach ($items as $item) {
-		$li .= '<li>' . $item . '</li>';
+		$li .= '<li class="' . $classNames . '">' . $item . '</li>';
 	}
 	return $li;
 }
 
-function wrap_in_links(array $items, array $links, bool $external = false): array
+function wrap_in_links(array $items, array $links, bool $external = false, array $classes = []): array
 {
+	$classNames = count($classes) > 0 ? implode(' ', $classes) : "";
+
 	$target = $external ? 'target="_blank" rel="noopener noreferrer"' : '';
 	$wrapped = [];
 	foreach ($items as $key => $item) {
-		$wrapped[] = '<a href="' . $links[$key] . '"' . $target . '>' . $item . '</a>';
+		$wrapped[] = '<a href="' . $links[$key] . '"' . $target . ' class="' . $classNames . '">' . $item . '</a>';
 	}
 	return $wrapped;
 }
 
-function generate_img_items(array $items): array
+function generate_img_items(array $items, array $classes = []): array
 {
+	$classNames = count($classes) > 0 ? implode(' ', $classes) : "";
+
 	$images = [];
 	foreach ($items as $item) {
 		$src = $item['src'];
 		$alt = $item['alt'];
-		$images[] = '<img src="' . $src . '" alt="' . $alt . '" />';
+		$images[] = '<img src="' . $src . '" alt="' . $alt . '" class="' . $classNames . '" />';
 	}
 	return $images;
 }
