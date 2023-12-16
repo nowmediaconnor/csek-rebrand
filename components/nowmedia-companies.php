@@ -21,4 +21,7 @@ $list_items = generate_list_items(wrap_in_links(generate_img_items($image_data, 
 ?>
 <ul class="flex flex-row gap-8 items-center justify-between">
     <?php echo $list_items; ?>
+    <li class="h-16">
+        <?php get_template_part('components/google-partner-badge'); ?>
+    </li>
 </ul>

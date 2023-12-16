@@ -27,16 +27,16 @@
 			<?php get_template_part('components/addresses-footer'); ?>
 		</div>
 		<div class="col-span-1 row-start-3 md:row-start-2 col-start-2 md:col-start-5 hidden md:flex justify-center md:justify-end items-center">
-			<?php get_template_part("components/google-partner-badge") ?>
 		</div>
 		<div class="col-span-3 items-end hidden md:flex">
 			<?php get_template_part('components/nowmedia-companies'); ?>
 		</div>
 		<div class="col-span-2 md:col-start-4 row-start-5 md:row-start-3 md:self-end md:justify-self-end flex flex-col md:items-end gap-4">
-			<div class="flex flex-row md:h-10 items-start md:items-center justify-start md:justify-between gap-x-6 flex-wrap text-xs">
-				<span>&copy; <?php echo date_i18n('Y'); ?> <?php echo get_bloginfo('name'); ?></span>
+			<div class="flex flex-row md:h-10 items-start md:items-center justify-end md:justify-between gap-x-6 gap-y-2 flex-wrap text-xs text-right">
 				<span><a href="#privacy">Privacy Policy</a></span>
 				<span><a href="#sitemap">Sitemap</a></span>
+				<span><a href="https://www.csekcreative.com/product-service-calculator/" target="_blank" rel="noopener noreferrer">Magic Tool</a></span>
+				<span>&copy; <?php echo date_i18n('Y'); ?> <?php echo get_bloginfo('name'); ?></span>
 			</div>
 		</div>
 	</div>
