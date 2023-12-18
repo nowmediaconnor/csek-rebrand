@@ -93,7 +93,7 @@ article > *:not(.entry-content),
     }
 
     & .nav-container {
-        @apply relative flex flex-col md:flex-row justify-start gap-8 md:justify-between items-start w-10/12 max-w-csek-max mx-auto md:py-32 overflow-y-scroll overflow-x-hidden;
+        @apply relative flex flex-col md:flex-row justify-start gap-8 md:justify-between items-start w-10/12 max-w-csek-max mx-auto md:pt-24 overflow-y-scroll overflow-x-hidden h-full;
         /* Hide scrollbar for IE, Edge and Firefox */
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
@@ -117,7 +117,7 @@ article > *:not(.entry-content),
                 @apply relative font-montserrat w-full;
 
                 & > a {
-                    @apply inline-block w-full;
+                    @apply inline-block w-fit;
                 }
             }
 
