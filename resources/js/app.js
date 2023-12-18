@@ -1,22 +1,22 @@
-import apiFetch from "@wordpress/api-fetch";
-
 function prepareNavController() {
-    const main_navigation = document.querySelector(".csek-nav-menu");
+    const mainNavigation = document.querySelector(".csek-nav-menu");
 
-    const nav_open_buttons = document.querySelectorAll("a[data-nav-open]");
-    const nav_close_buttons = document.querySelectorAll("a[data-nav-close]");
+    const navOpenButtons = document.querySelectorAll("a[data-nav-open]");
+    const navCloseButtons = document.querySelectorAll("a[data-nav-close]");
 
-    nav_close_buttons.forEach((button) => {
+    navCloseButtons.forEach((button) => {
         button.addEventListener("click", (e) => {
             e.preventDefault();
-            main_navigation.classList.add("hidden-nav");
+            mainNavigation.classList.add("hidden-nav");
+            document.body.classList.remove("nav-open");
         });
     });
 
-    nav_open_buttons.forEach((button) => {
+    navOpenButtons.forEach((button) => {
         button.addEventListener("click", (e) => {
             e.preventDefault();
-            main_navigation.classList.toggle("hidden-nav");
+            mainNavigation.classList.toggle("hidden-nav");
+            document.body.classList.toggle("nav-open");
         });
     });
 }
@@ -46,8 +46,23 @@ async function addToggleHeaderButton() {
     document.body.appendChild(button);
 }
 
+function computeSubmenuHeights() {
+    const navMenu = document.querySelector(".csek-nav-menu");
+
+    if (!navMenu) return;
+
+    const submenus = navMenu.querySelectorAll(".sub-menu");
+
+    submenus.forEach((submenu) => {
+        const submenuHeight = submenu.offsetHeight;
+        submenu.style.setProperty("--submenu-height", `${submenuHeight}px`);
+        submenu.classList.add("submenu-ready");
+    });
+}
+
 // Navigation toggle
 window.addEventListener("load", () => {
     prepareNavController();
     addToggleHeaderButton();
+    computeSubmenuHeights();
 });
