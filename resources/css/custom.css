@@ -5,10 +5,9 @@
 
 /* Reset Some Styles */
 
-body.nav-open {
-    position: fixed;
-    top: 0;
-    left: 0;
+#page.nav-open {
+    overflow: hidden;
+    height: 100vh;
 }
 
 select {
@@ -83,14 +82,25 @@ article > *:not(.entry-content),
 }
 
 .csek-nav-menu {
-    @apply z-50 fixed top-0 left-0 bg-csek-dark w-full min-h-screen transition-all duration-300 ease-in-out;
+    @apply z-[60] fixed top-0 left-0 bg-csek-dark w-full h-screen transition-all duration-300 ease-in-out flex flex-col overflow-hidden;
 
     & .submenu-ready {
         @apply md:max-h-0;
     }
 
+    & .csek-header-elements {
+        @apply shadow-md shadow-csek-dark z-[70];
+    }
+
     & .nav-container {
-        @apply flex flex-col md:flex-row justify-start gap-8 md:justify-between items-start w-10/12 max-w-csek-max mx-auto md:py-32 overflow-y-scroll;
+        @apply relative flex flex-col md:flex-row justify-start gap-8 md:justify-between items-start w-10/12 max-w-csek-max mx-auto md:py-32 overflow-y-scroll overflow-x-hidden;
+        /* Hide scrollbar for IE, Edge and Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
         & .csek-wp-nav {
             @apply text-5xl font-semibold;

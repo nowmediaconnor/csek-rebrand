@@ -69,6 +69,9 @@ module.exports = {
             maxWidth: {
                 ...customWidths,
             },
+            minHeight: {
+                header: "5rem",
+            },
             gridTemplateRows: {
                 footer: "2fr 1fr 1fr",
                 "footer-mobile": "1fr 1fr 1fr 1fr 3rem",

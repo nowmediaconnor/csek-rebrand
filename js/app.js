@@ -4,18 +4,19 @@
     const mainNavigation = document.querySelector(".csek-nav-menu");
     const navOpenButtons = document.querySelectorAll("a[data-nav-open]");
     const navCloseButtons = document.querySelectorAll("a[data-nav-close]");
+    const page = document.getElementById("page");
     navCloseButtons.forEach((button) => {
       button.addEventListener("click", (e) => {
         e.preventDefault();
         mainNavigation.classList.add("hidden-nav");
-        document.body.classList.remove("nav-open");
+        page.classList.remove("nav-open");
       });
     });
     navOpenButtons.forEach((button) => {
       button.addEventListener("click", (e) => {
         e.preventDefault();
         mainNavigation.classList.toggle("hidden-nav");
-        document.body.classList.toggle("nav-open");
+        page.classList.toggle("nav-open");
       });
     });
   }

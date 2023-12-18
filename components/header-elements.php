@@ -15,7 +15,7 @@ $logo = $meta->logo_url($contrast || null);
 
 ?>
 
-<div class="flex flex-row justify-between items-center md:px-8 mx-auto relative w-full h-header">
+<div class="csek-header-elements flex flex-row justify-between items-center md:px-8 mx-auto relative w-full min-h-header h-header basis-header">
     <div class="mx-4 md:mx-8 flex flex-col justify-center items-center font-syne self-center translate-y-[0.1rem]">
         <a href="<?php echo $meta->site_url; ?>" class="w-28 inline-flex flex-col justify-center items-center h-11 <?php echo $contrast ? "text-csek-white" : "text-csek-dark"; ?>">
             <img src="<?php echo $logo ?>" class="h-8" />
