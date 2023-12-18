@@ -103,7 +103,7 @@ article > *:not(.entry-content),
         }
 
         & .csek-wp-nav {
-            @apply text-5xl font-semibold;
+            @apply text-3xl md:text-5xl font-semibold;
 
             & a {
                 @apply font-syne underline underline-offset-2 decoration-1 text-csek-white w-max transition-colors duration-200 ease-in-out;

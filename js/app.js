@@ -47,6 +47,8 @@
       return;
     const submenus = navMenu.querySelectorAll(".sub-menu");
     submenus.forEach((submenu) => {
+      if (submenu.classList.contains("submenu-ready"))
+        submenu.classList.remove("submenu-ready");
       const submenuHeight = submenu.offsetHeight;
       submenu.style.setProperty("--submenu-height", `${submenuHeight}px`);
       submenu.classList.add("submenu-ready");
@@ -55,6 +57,9 @@
   window.addEventListener("load", () => {
     prepareNavController();
     addToggleHeaderButton();
+    computeSubmenuHeights();
+  });
+  window.addEventListener("resize", () => {
     computeSubmenuHeights();
   });
 })();
