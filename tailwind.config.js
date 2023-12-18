@@ -8,6 +8,24 @@ const customWidths = {
     serif: "12rem",
 };
 
+const customTimings = {
+    0: "0ms",
+    100: "100ms",
+    200: "200ms",
+    300: "300ms",
+    400: "400ms",
+    500: "500ms",
+    600: "600ms",
+    700: "700ms",
+    800: "800ms",
+    900: "900ms",
+    1000: "1000ms",
+    2000: "2000ms",
+    3000: "3000ms",
+    4000: "4000ms",
+    5000: "5000ms",
+};
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     // important: true,
@@ -36,6 +54,12 @@ module.exports = {
             animation: {
                 "spin-slow": "spin 3s linear infinite",
             },
+            transitionDuration: {
+                ...customTimings,
+            },
+            transitionDelay: {
+                ...customTimings,
+            },
             spacing: {
                 header: "5rem",
             },
@@ -44,6 +68,9 @@ module.exports = {
             },
             maxWidth: {
                 ...customWidths,
+            },
+            minHeight: {
+                header: "5rem",
             },
             gridTemplateRows: {
                 footer: "2fr 1fr 1fr",

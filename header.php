@@ -21,12 +21,13 @@ $header_class_optional = $meta->needs_contrast() ? "w-[100vw] h-screen" : "w-ful
 
 	<!-- <?php do_action('csek_rebrand_site_before'); ?> -->
 
+	<?php get_template_part('components/nav-menu', null, ['meta' => $meta]); ?>
+
 	<div id="page" class="min-h-screen flex flex-col">
 
 		<?php do_action('csek_rebrand_header'); ?>
 		<header class="w-full relative <?php echo $header_class_optional; ?>">
 			<?php get_template_part('components/header-elements', null, ['meta' => $meta, 'needs_contrast' => false]); ?>
-			<?php get_template_part('components/nav-menu', null, ['meta' => $meta]); ?>
 			<?php get_template_part('components/scroll-down-spinner'); ?>
 			<?php if (!$meta->is_home) : ?>
 				<?php if ($meta->has_thumbnail) : ?>

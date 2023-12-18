@@ -5,6 +5,11 @@
 
 /* Reset Some Styles */
 
+#page.nav-open {
+    overflow: hidden;
+    height: 100vh;
+}
+
 select {
     box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.7);
     border-radius: 1rem;
@@ -77,13 +82,28 @@ article > *:not(.entry-content),
 }
 
 .csek-nav-menu {
-    @apply z-50 fixed top-0 left-0 bg-csek-dark w-full h-screen transition-all duration-300 ease-in-out overflow-hidden;
+    @apply z-[60] fixed top-0 left-0 bg-csek-dark w-full h-screen transition-all duration-300 ease-in-out flex flex-col overflow-hidden;
+
+    & .submenu-ready {
+        @apply md:max-h-0;
+    }
+
+    & .csek-header-elements {
+        @apply shadow-md shadow-csek-dark z-[70];
+    }
 
     & .nav-container {
-        @apply flex flex-col md:flex-row justify-start gap-8 md:justify-between items-start w-10/12 max-w-csek-max mx-auto h-full md:py-32;
+        @apply relative flex flex-col md:flex-row justify-start gap-8 md:justify-between items-start w-10/12 max-w-csek-max mx-auto md:pt-24 overflow-y-scroll overflow-x-hidden h-full;
+        /* Hide scrollbar for IE, Edge and Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
         & .csek-wp-nav {
-            @apply text-5xl font-semibold;
+            @apply text-3xl md:text-5xl font-semibold;
 
             & a {
                 @apply font-syne underline underline-offset-2 decoration-1 text-csek-white w-max transition-colors duration-200 ease-in-out;
@@ -97,7 +117,7 @@ article > *:not(.entry-content),
                 @apply relative font-montserrat w-full;
 
                 & > a {
-                    @apply inline-block w-full;
+                    @apply inline-block w-fit;
                 }
             }
 
@@ -115,20 +135,14 @@ article > *:not(.entry-content),
                 }
             }
 
-            & .menu-item-has-children {
-                & .sub-menu {
-                    @apply relative left-8;
+            & .sub-menu {
+                --submenu-height: 9999px;
+                @apply relative left-8 flex flex-col gap-4 my-4 h-fit overflow-hidden;
+                transition: max-height 300ms ease-in-out;
+            }
 
-                    & .menu-item > a {
-                        /* @apply pl-8; */
-                    }
-
-                    & .menu-item > a:not(.current-menu-item > a) {
-                    }
-                }
-
-                & .menu-item + .menu-item {
-                }
+            & .menu-item-has-children:hover > .sub-menu.submenu-ready {
+                max-height: var(--submenu-height);
             }
         }
     }
