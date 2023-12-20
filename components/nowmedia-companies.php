@@ -19,12 +19,16 @@ $image_data = array_map(function ($image, $alt) {
 $list_items = generate_list_items(wrap_in_links(generate_img_items($image_data, $classes = ['h-8 max-w-auto']), $links, true));
 
 ?>
-<ul class="flex flex-row gap-8 items-center justify-between">
-    <?php echo $list_items; ?>
-    <li class="h-16">
-        <?php get_template_part('components/google-partner-badge'); ?>
+<ul class="flex flex-col md:flex-row gap-8 items-end md:items-center justify-between">
+    <li>
+        <ul class="flex flex-row gap-8 items-center justify-between">
+            <?php echo $list_items; ?>
+        </ul>
     </li>
-    <li class="h-16">
-        <?php get_template_part('components/semrush-partner-badge'); ?>
+    <li>
+        <div class="h-14 flex flex-row gap-8 items-center justify-start">
+            <?php get_template_part('components/google-partner-badge'); ?>
+            <?php get_template_part('components/semrush-partner-badge'); ?>
+        </div>
     </li>
 </ul>
