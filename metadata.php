@@ -1,5 +1,7 @@
 <?php
 
+use function PHPSTORM_META\map;
+
 /**
  * Created on Mon Oct 23 2023
  * Author: Connor Doman
@@ -65,6 +67,7 @@ class ContactInfo
 class SiteMetadata
 {
     public static ContactInfo $csek_creative_address;
+    public static ContactInfo $kamloops_address;
     public static ContactInfo $vovia_address;
     private static bool $initialized = false;
 
@@ -85,6 +88,17 @@ class SiteMetadata
             "(250) 862-8010",
         );
 
+        self::$kamloops_address = new ContactInfo(
+            "Kamloops Office",
+            "348 Tranquille Rd",
+            null,
+            "Kamloops",
+            "BC",
+            "V2B 3G6",
+            null,
+            "(250) 862-8010"
+        );
+
         self::$vovia_address = new ContactInfo(
             "Vovia",
             "1500 8th St SW",
@@ -101,7 +115,7 @@ class SiteMetadata
 
     public static function address_html()
     {
-        return self::$csek_creative_address->to_html() . self::$vovia_address->to_html();
+        return self::$csek_creative_address->to_html() . self::$kamloops_address->to_html() . self::$vovia_address->to_html();
     }
 }
 
