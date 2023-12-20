@@ -24,4 +24,7 @@ $list_items = generate_list_items(wrap_in_links(generate_img_items($image_data, 
     <li class="h-16">
         <?php get_template_part('components/google-partner-badge'); ?>
     </li>
+    <li class="h-16">
+        <?php get_template_part('components/semrush-partner-badge'); ?>
+    </li>
 </ul>

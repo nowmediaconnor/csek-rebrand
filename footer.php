@@ -23,10 +23,8 @@
 		<div class="flex flex-row row-start-3 md:row-start-2 col-span-1 items-center justify-start">
 			<?php get_template_part('components/social-media'); ?>
 		</div>
-		<div class="flex flex-row row-start-4 col-start-1 md:col-start-2 col-span-2 md:row-start-2 items-center justify-between md:justify-around">
+		<div class="flex flex-row row-start-4 col-start-1 md:col-start-2 col-span-3 md:row-start-2 items-start justify-between md:justify-around text-sm md:text-base">
 			<?php get_template_part('components/addresses-footer'); ?>
-		</div>
-		<div class="col-span-1 row-start-3 md:row-start-2 col-start-2 md:col-start-5 hidden md:flex justify-center md:justify-end items-center">
 		</div>
 		<div class="col-span-3 items-end hidden md:flex">
 			<?php get_template_part('components/nowmedia-companies'); ?>

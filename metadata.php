@@ -50,6 +50,7 @@ class ContactInfo
                 $html .= "<span class='state'>" . $this->state . "</span>";
             }
             if ($this->zip) {
+                $this->zip = preg_replace('/\s+/', '&nbsp;', $this->zip);
                 $html .= " <span class='zip'>" . $this->zip . "</span>";
             }
             $html .= "</div>";
