@@ -8,7 +8,7 @@
     <div class="flex flex-row gap-8">
         <a href="#privacy">Privacy Policy</a>
         <a href="#sitemap">Sitemap</a>
-        <a href="https://www.csekcreative.com/product-service-calculator/" target="_blank" rel="noopener noreferrer">Magic Tool</a>
+        <a href="https://legacy.csekcreative.com/product-service-calculator/" target="_blank" rel="noopener noreferrer">Magic Tool</a>
     </div>
     <span>&copy; <?php echo date_i18n('Y'); ?> <?php echo get_bloginfo('name'); ?></span>
 </div>
