@@ -21,7 +21,7 @@
 		<div class="flex flex-row row-start-3 md:row-start-2 col-span-1 items-center justify-start">
 			<?php get_template_part('components/social-media'); ?>
 		</div>
-		<div class="flex flex-row row-start-4 col-start-1 md:col-start-3 col-span-3 md:row-start-2 items-start justify-between md:justify-around text-sm md:text-base">
+		<div class="flex flex-row row-start-4 col-start-1 md:col-start-3 col-span-3 md:row-start-2 items-start justify-between md:justify-around text-sm md:text-base gap-2">
 			<?php get_template_part('components/addresses-footer'); ?>
 		</div>
 		<div class="col-span-3 items-end row-start-6 md:row-start-3 row-span-2 md:row-span-1 hidden md:flex pt-8">
