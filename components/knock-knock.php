@@ -6,7 +6,7 @@
 
 ?>
 <a class="lets-talk-open" href="#letstalk">
-    <div class="w-32 h-32 rounded-full bg-csek-red flex flex-row items-center justify-center text-white uppercase font-extrabold text-xs -rotate-[30deg] font-montserrat relative">
+    <div class="w-28 h-28 md:w-32 md:h-32 rounded-full bg-csek-red flex flex-row items-center justify-center text-white uppercase font-extrabold text-xs -rotate-[30deg] font-montserrat relative">
         <span class="absolute">Knock Knock!</span>
     </div>
 </a>
