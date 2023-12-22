@@ -19,6 +19,19 @@ $header_class_optional = $meta->needs_contrast() ? "w-[100vw] h-screen" : "w-ful
 <body <?php body_class('bg-white text-csek-dark antialiased'); ?>>
 	<div id="loading"></div>
 
+	<div id="video-player" class="video-player">
+		<div class="player-dialog">
+			<a href="#closedialog" class="close-dialog">
+				<i class="fas fa-x"></i>
+			</a>
+			<div class="player">
+				<video controls="false" preload="none">
+					Videos aren&apos;t supported in your browser. Frankly we&apos;re impressed you got this far.
+				</video>
+			</div>
+		</div>
+	</div>
+
 	<!-- <?php do_action('csek_rebrand_site_before'); ?> -->
 
 	<?php get_template_part('components/nav-menu', null, ['meta' => $meta]); ?>
