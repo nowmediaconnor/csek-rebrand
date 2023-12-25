@@ -247,18 +247,38 @@ function csek_related_posts_by_tag_shortcode($atts)
 	$query = new WP_Query($args);
 
 	// Start HTML string
-	$html = '<div class="custom-related-posts">';
+	$html = '<div class="csek-related-posts">';
+
+	$tag_limit = 3;
 
 	if ($query->have_posts()) {
 		while ($query->have_posts()) {
 			$query->the_post();
 			$read_time = calculate_read_time(get_the_content()); // You'll need to implement this function
 
+			$post_link = get_the_permalink();
+
 			$html .= '<div class="related-post">';
 			$html .= '<div class="featured-image">' . get_the_post_thumbnail() . '</div>';
-			$html .= '<h2 class="title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h2>';
+			$html .= '<div class="text-content">';
+			$html .= '<h2 class="title"><a href="' . $post_link . '">' . get_the_title() . '</a></h2>';
 			$html .= '<div class="read-time">' . $read_time . ' MIN READ</div>';
-			$html .= '<div class="tags">' . get_the_tag_list() . '</div>';
+
+			$html .= '<div class="tags">';
+			$tags = get_the_tags();
+
+			$tag_count = 0;
+
+			foreach ($tags as $tag) {
+				if ($tag_count >= $tag_limit) {
+					$html .= '<a href="' . $post_link . '" class="chip">+' . (count($tags) - $tag_limit) . '</a>';
+					break;
+				}
+				$html .= '<a href="' . get_tag_link($tag->term_id) . '" class="chip">' . $tag->name . '</a>';
+				$tag_count++;
+			}
+			$html .= '</div>';
+			$html .= '</div>';
 			$html .= '</div>';
 		}
 	} else {

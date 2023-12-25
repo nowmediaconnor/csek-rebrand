@@ -80,10 +80,34 @@ article > *:not(.entry-content),
 /* Generic Classes */
 
 .chip {
-    @apply inline-block rounded-full px-3 py-1 text-xs font-medium text-zinc-500 bg-zinc-100 font-montserrat uppercase transition-all duration-200 ease-in-out;
+    @apply inline-flex items-center justify-center text-center h-min rounded-full px-3 py-1 text-xs font-medium text-zinc-500 bg-zinc-100 font-montserrat uppercase transition-all duration-200 ease-in-out;
 
     &:hover {
         @apply transform scale-105;
+    }
+}
+
+.csek-related-posts {
+    @apply flex flex-row items-start justify-start gap-4 w-11/12 max-w-csek-max mx-auto;
+
+    & .related-post {
+        @apply basis-1/4 flex flex-col box-border;
+
+        & .text-content {
+            @apply flex flex-col gap-4;
+        }
+
+        & .title {
+            @apply text-csek-dark font-bold font-syne text-2xl;
+        }
+
+        & .featured-image {
+            @apply w-full h-48 rounded-md overflow-hidden aspect-4/3;
+        }
+
+        & .tags {
+            @apply flex flex-row gap-2 items-center justify-start;
+        }
     }
 }
 

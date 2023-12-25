@@ -76,6 +76,9 @@ module.exports = {
                 footer: "2fr 1fr 1fr",
                 "footer-mobile": "1fr 1fr 1fr 3rem",
             },
+            aspectRatio: {
+                "4/3": "4 / 3",
+            },
         },
         screens: {
             xs: "480px",
