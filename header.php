@@ -1,6 +1,8 @@
 <?php
 
-$meta = new PageMetadata(get_template_directory_uri());
+// $meta = new PageMetadata(get_template_directory_uri());
+$meta = PageMetadataSingleton::getInstance()->getMetadata();
+
 $header_class_optional = $meta->needs_contrast() ? "w-[100vw] h-screen" : "w-full h-header";
 
 ?>
@@ -60,7 +62,7 @@ $header_class_optional = $meta->needs_contrast() ? "w-[100vw] h-screen" : "w-ful
 			<?php get_template_part('components/header-elements', null, ['meta' => $meta, 'needs_contrast' => false]); ?>
 			<?php get_template_part('components/scroll-down-spinner'); ?>
 			<?php if (!$meta->is_home) : ?>
-				<?php if ($meta->has_thumbnail) : ?>
+				<?php if ($meta->is_projects_post() && $meta->has_thumbnail) : ?>
 					<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center text-center w-[100vw] h-[100vh] text-white -z-10">
 						<div class="min-w-[33.3%] w-4/5 md:max-w-min">
 							<?php if ($meta->has_subtitle) : ?>

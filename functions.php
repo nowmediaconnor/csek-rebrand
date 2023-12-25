@@ -4,6 +4,31 @@ require_once "metadata.php";
 
 SiteMetadata::init();
 
+class PageMetadataSingleton
+{
+	private static $instance = null;
+	private $metadata;
+
+	private function __construct()
+	{
+		$this->metadata = new PageMetadata(get_template_directory_uri());
+	}
+
+	public static function getInstance()
+	{
+		if (self::$instance == null) {
+			self::$instance = new PageMetadataSingleton();
+		}
+
+		return self::$instance;
+	}
+
+	public function getMetadata()
+	{
+		return $this->metadata;
+	}
+}
+
 /**
  * Theme setup.
  */
@@ -55,6 +80,7 @@ function csek_rebrand_enqueue_scripts()
 	wp_enqueue_style('custom', csek_rebrand_asset('css/style.css'), ['tailpress'], $theme->get('Version'));
 
 	wp_enqueue_script('csekrebrand', csek_rebrand_asset('js/app.js'), [], $theme->get('Version'));
+
 	// $apiSettings = [
 	// 	'root' => esc_url_raw(rest_url()),
 	// 	'nonce' => wp_create_nonce('wp_rest')

@@ -132,6 +132,9 @@ class PageMetadata
     public $site_logo_url = "";
     public $site_logo_light_url = "";
 
+    public $main_category = "";
+    public $tags = [];
+
     public function __construct($theme_url = "")
     {
         $this->site_url = get_site_url();
@@ -152,6 +155,22 @@ class PageMetadata
 
         $this->site_logo_url = $theme_url . "/img/csek.svg";
         $this->site_logo_light_url = $theme_url . "/img/csek-light.svg";
+
+        $categories = get_the_category();
+        if (!empty($categories)) {
+            $this->main_category = $categories[0]->slug;
+        } else {
+            $this->main_category = "none";
+        }
+
+        $tags = get_the_tags();
+        if (!empty($tags)) {
+            foreach ($tags as $tag) {
+                $this->tags[$tag->term_id] = ["slug" => $tag->slug, "name" => $tag->name, "url" => get_tag_link($tag->term_id)];
+            }
+        } else {
+            $this->tags = [];
+        }
     }
 
     public function needs_contrast()
@@ -166,5 +185,25 @@ class PageMetadata
         } else {
             return $this->site_logo_url;
         }
+    }
+
+    public function is_blog_post()
+    {
+        return $this->main_category === "blog";
+    }
+
+    public function is_projects_post()
+    {
+        return $this->main_category === "projects";
+    }
+
+    public function post_title()
+    {
+        echo $this->leading_title;
+    }
+
+    public function post_subtitle()
+    {
+        echo $this->subtitle;
     }
 }
