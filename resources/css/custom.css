@@ -80,7 +80,11 @@ article > *:not(.entry-content),
 /* Generic Classes */
 
 .chip {
-    @apply inline-block rounded-full px-3 py-1 text-xs font-medium text-zinc-500 bg-zinc-100 font-montserrat uppercase;
+    @apply inline-block rounded-full px-3 py-1 text-xs font-medium text-zinc-500 bg-zinc-100 font-montserrat uppercase transition-all duration-200 ease-in-out;
+
+    &:hover {
+        @apply transform scale-105;
+    }
 }
 
 /*

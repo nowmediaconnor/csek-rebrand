@@ -12,4 +12,7 @@ $meta = PageMetadataSingleton::getInstance()->getMetadata();
     get_template_part('components/blog/share-links');
     echo do_shortcode('[related_posts_by_tags posts_per_page="4"]');
     ?>
+    <div class="flex items-center justify-center w-full py-8">
+        <a href="/tag/blog" class="rounded-full px-8 py-4 uppercase font-montserrat font-semibold border border-solid border-csek-dark text-xs hover:transform hover:scale-105 transition-all ease-in-out duration-200">More Articles</a>
+    </div>
 </footer>
