@@ -10,8 +10,6 @@ $meta = PageMetadataSingleton::getInstance()->getMetadata();
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	if ($meta->is_blog_post() && is_singular()) {
-		// Display the title of the post
-		// the_title('<h1 class="entry-title">', '</h1>');
 		get_template_part('components/blog/post-title');
 	}
 	?>
@@ -32,4 +30,10 @@ $meta = PageMetadataSingleton::getInstance()->getMetadata();
 		);
 		?>
 	</div>
+
+	<?php
+	if ($meta->is_blog_post() && is_singular()) {
+		get_template_part('components/blog/post-footer');
+	}
+	?>
 </article>

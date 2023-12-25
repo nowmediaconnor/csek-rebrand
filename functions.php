@@ -207,3 +207,71 @@ function generate_img_items(array $items, array $classes = []): array
 	}
 	return $images;
 }
+
+
+/* Custom Post Tag Fetch */
+
+function calculate_read_time($content)
+{
+	$word_count = str_word_count(strip_tags($content));
+	$words_per_minute = 225; // Average reading words per minute
+	$read_time = ceil($word_count / $words_per_minute);
+	return $read_time;
+}
+
+
+function csek_related_posts_by_tag_shortcode($atts)
+{
+	// Shortcode attributes
+	$atts = shortcode_atts(array(
+		'posts_per_page' => 4, // Default number of posts
+	), $atts);
+
+	// Get tags of the current post
+	$tags = wp_get_post_tags(get_the_ID(), array('fields' => 'ids'));
+
+	// Return if no tags are found
+	if (!$tags) {
+		return 'No related posts found';
+	}
+
+	// WP_Query arguments
+	$args = array(
+		'tag__in' => $tags,
+		'post_type' => 'post',
+		'posts_per_page' => $atts['posts_per_page'],
+		'post__not_in' => array(get_the_ID()), // Exclude current post
+		'no_found_rows' => true, // Performance boost since pagination is not needed
+	);
+
+	$query = new WP_Query($args);
+
+	// Start HTML string
+	$html = '<div class="custom-related-posts">';
+
+	if ($query->have_posts()) {
+		while ($query->have_posts()) {
+			$query->the_post();
+			$read_time = calculate_read_time(get_the_content()); // You'll need to implement this function
+
+			$html .= '<div class="related-post">';
+			$html .= '<div class="featured-image">' . get_the_post_thumbnail() . '</div>';
+			$html .= '<h2 class="title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h2>';
+			$html .= '<div class="read-time">' . $read_time . ' MIN READ</div>';
+			$html .= '<div class="tags">' . get_the_tag_list() . '</div>';
+			$html .= '</div>';
+		}
+	} else {
+		$html .= '<p>No related posts found.</p>';
+	}
+
+	$html .= '</div>';
+
+	// Reset postdata to ensure no conflicts with other queries
+	wp_reset_postdata();
+
+	return $html;
+}
+
+// Register the shortcode
+add_shortcode('related_posts_by_tags', 'csek_related_posts_by_tag_shortcode');

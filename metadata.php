@@ -135,6 +135,8 @@ class PageMetadata
     public $main_category = "";
     public $tags = [];
 
+    public $read_time = "";
+
     public function __construct($theme_url = "")
     {
         $this->site_url = get_site_url();
@@ -171,6 +173,20 @@ class PageMetadata
         } else {
             $this->tags = [];
         }
+
+        $this->read_time = $this->calculate_read_time();
+    }
+
+    private function calculate_read_time()
+    {
+        $word_count = str_word_count(strip_tags(get_the_content()));
+        $minutes = floor($word_count / 225);
+        $seconds = floor($word_count % 225 / (225 / 60));
+        if ($minutes > 0) {
+            return $minutes . " minute read";
+        } else {
+            return $seconds . " second read";
+        }
     }
 
     public function needs_contrast()
@@ -205,5 +221,25 @@ class PageMetadata
     public function post_subtitle()
     {
         echo $this->subtitle;
+    }
+
+    public function get_facebook_link()
+    {
+        echo "https://www.facebook.com/sharer/sharer.php?u=" . urlencode(get_permalink());
+    }
+
+    public function get_twitter_link()
+    {
+        echo "https://twitter.com/intent/tweet?url=" . urlencode(get_permalink()) . "&text=" . urlencode(get_the_title());
+    }
+
+    public function get_linkedin_link()
+    {
+        echo "https://www.linkedin.com/sharing/share-offsite/?url=" . urlencode(get_permalink());
+    }
+
+    public function get_email_link()
+    {
+        echo "mailto:?subject=" . urlencode(get_the_title()) . "&body=" . urlencode(get_permalink());
     }
 }
