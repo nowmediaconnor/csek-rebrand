@@ -244,45 +244,94 @@ function csek_related_posts_by_tag_shortcode($atts)
 		'no_found_rows' => true, // Performance boost since pagination is not needed
 	);
 
+	$current_post_tags = array_map(function ($item) {
+		return $item->term_id;
+	}, get_the_tags());
+
+	$related_posts = [];
+
 	$query = new WP_Query($args);
 
 	// Start HTML string
 	$html = '<div class="csek-related-posts">';
 
-	$tag_limit = 3;
+	$tag_limit = 2;
 
 	if ($query->have_posts()) {
 		while ($query->have_posts()) {
 			$query->the_post();
-			$read_time = calculate_read_time(get_the_content()); // You'll need to implement this function
 
-			$post_link = get_the_permalink();
+			// Get the tags of the post and extract their IDs
+			$post_tags_objects = wp_get_post_tags(get_the_ID());
+			$post_tags = array_map(function ($tag) {
+				return $tag->term_id;
+			}, $post_tags_objects);
 
-			$html .= '<div class="related-post">';
-			$html .= '<div class="featured-image">' . get_the_post_thumbnail() . '</div>';
-			$html .= '<div class="text-content">';
-			$html .= '<h2 class="title"><a href="' . $post_link . '">' . get_the_title() . '</a></h2>';
-			$html .= '<div class="read-time">' . $read_time . ' MIN READ</div>';
+			// Count common tags
+			$common_tags_count = count(array_intersect($current_post_tags, $post_tags));
 
-			$html .= '<div class="tags">';
-			$tags = get_the_tags();
-
-			$tag_count = 0;
-
-			foreach ($tags as $tag) {
-				if ($tag_count >= $tag_limit) {
-					$html .= '<a href="' . $post_link . '" class="chip">+' . (count($tags) - $tag_limit) . '</a>';
+			// Add to related posts array if not already present
+			$post_id = get_the_ID();
+			$is_duplicate = false;
+			foreach ($related_posts as $post) {
+				if ($post['ID'] === $post_id) {
+					$is_duplicate = true;
 					break;
 				}
-				$html .= '<a href="' . get_tag_link($tag->term_id) . '" class="chip">' . $tag->name . '</a>';
-				$tag_count++;
 			}
-			$html .= '</div>';
-			$html .= '</div>';
-			$html .= '</div>';
+			if (!$is_duplicate) {
+				$related_posts[] = array(
+					'ID' => $post_id,
+					'common_tags_count' => $common_tags_count
+				);
+			}
 		}
-	} else {
-		$html .= '<p>No related posts found.</p>';
+	}
+
+	// Sort posts by the number of common tags
+	usort($related_posts, function ($a, $b) {
+		return $b['common_tags_count'] - $a['common_tags_count'];
+	});
+
+	// Start HTML string
+	$html = '<div class="csek-related-posts">';
+
+	foreach ($related_posts as $post) {
+		$post_id = $post['ID'];
+		$post_data = get_post($post_id);
+		setup_postdata($post_data);
+		$read_time = calculate_read_time($post_data->post_content);
+
+		$post_link = get_the_permalink();
+
+		$html .= '<div class="related-post">';
+		$html .= '<div class="featured-image">' . get_the_post_thumbnail($post_id) . '</div>';
+		$html .= '<div class="text-content">';
+		$html .= '<h2 class="title"><a href="' . $post_link . '">' . $post_data->post_title . '</a></h2>';
+		$html .= '<div class="read-time">' . $read_time . ' MIN READ</div>';
+
+		$html .= '<div class="tags">';
+		$tags = get_the_tags($post_id);
+
+		$tag_count = 0;
+		$leftover_tags = [];
+
+		foreach ($tags as $tag) {
+			if ($tag_count >= $tag_limit) {
+				$leftover_tags[] = $tag->name;
+				continue;
+			}
+			$html .= '<a href="' . get_tag_link($tag->term_id) . '" class="chip">' . $tag->name . '</a>';
+			$tag_count++;
+		}
+
+		if ($tag_count >= $tag_limit) {
+			$html .= '<a href="' . $post_link . '" title="' . implode(", ", $leftover_tags) . '" class="chip">+' . (count($tags) - $tag_limit) . '</a>';
+		}
+
+		$html .= '</div>';
+		$html .= '</div>';
+		$html .= '</div>';
 	}
 
 	$html .= '</div>';
