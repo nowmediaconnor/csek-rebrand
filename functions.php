@@ -252,9 +252,6 @@ function csek_related_posts_by_tag_shortcode($atts)
 
 	$query = new WP_Query($args);
 
-	// Start HTML string
-	$html = '<div class="csek-related-posts">';
-
 	$tag_limit = 2;
 
 	if ($query->have_posts()) {
