@@ -12,7 +12,7 @@ $meta = PageMetadataSingleton::getInstance()->getMetadata();
 	if ($meta->is_blog_post() && is_singular()) :
 		get_template_part('components/blog/post-title');
 	?>
-		<div class="blog-content w-11/12 max-w-csek-2/3">
+		<div class="blog-content w-11/12 max-w-csek-2/3 mx-auto">
 			<?php the_content(); ?>
 		</div>
 	<?php
