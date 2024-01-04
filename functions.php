@@ -65,30 +65,32 @@ function csek_rebrand_setup()
 
 add_action('after_setup_theme', 'csek_rebrand_setup');
 
+function csek_theme_file_path(string $relative_path)
+{
+	// Remove leading slash if present
+	$relative_path = ltrim($relative_path, '/');
+
+	return plugin_dir_path(__FILE__) . $relative_path;
+}
+
+function csek_file_version(string $filepath)
+{
+	return filemtime(csek_theme_file_path($filepath));
+}
+
 /**
  * Enqueue theme assets.
  */
 function csek_rebrand_enqueue_scripts()
 {
+	// $theme = wp_get_theme();
 
+	wp_enqueue_style('tailpress', csek_rebrand_asset('css/app.css'), [], csek_file_version('css/app.css'));
+	wp_enqueue_style('fonts', csek_rebrand_asset('css/fonts.css'), [], csek_file_version('css/fonts.css'));
+	wp_enqueue_style('animation', csek_rebrand_asset('css/animation.css'), [], csek_file_version('css/animation.css'));
+	wp_enqueue_style('custom', csek_rebrand_asset('css/style.css'), ['tailpress'], csek_file_version('css/style.css'));
 
-	$theme = wp_get_theme();
-
-	wp_enqueue_style('tailpress', csek_rebrand_asset('css/app.css'), [], $theme->get('Version'));
-	wp_enqueue_style('fonts', csek_rebrand_asset('css/fonts.css'), [], $theme->get('Version'));
-	wp_enqueue_style('animation', csek_rebrand_asset('css/animation.css'), [], $theme->get('Version'));
-	wp_enqueue_style('custom', csek_rebrand_asset('css/style.css'), ['tailpress'], $theme->get('Version'));
-
-	wp_enqueue_script('csekrebrand', csek_rebrand_asset('js/app.js'), [], $theme->get('Version'));
-
-	// $apiSettings = [
-	// 	'root' => esc_url_raw(rest_url()),
-	// 	'nonce' => wp_create_nonce('wp_rest')
-	// ];
-	// wp_add_inline_script("csekrebrand", "const CSEK_API_SETTINGS = " . json_encode($apiSettings), "before");
-
-	wp_register_script('CircleType', 'https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js', null, null, true);
-	wp_enqueue_script('CircleType');
+	wp_enqueue_script('csekrebrand', csek_rebrand_asset('js/app.js'), [], csek_file_version('js/app.js'), true);
 }
 
 add_action('wp_enqueue_scripts', 'csek_rebrand_enqueue_scripts');
