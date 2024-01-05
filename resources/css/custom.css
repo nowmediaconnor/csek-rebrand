@@ -183,11 +183,14 @@ select {
 
             & .sub-menu {
                 --submenu-height: 9999px;
-                @apply relative left-8 flex flex-col gap-4 my-4 h-fit overflow-hidden;
-                transition: max-height 300ms ease-in-out;
+                @apply relative left-8 flex flex-col gap-4 h-fit overflow-hidden;
+                transition:
+                    max-height 300ms ease-in-out,
+                    margin 300ms ease-in-out;
             }
 
             & .menu-item-has-children:hover > .sub-menu.submenu-ready {
+                @apply my-4;
                 max-height: var(--submenu-height);
             }
         }
