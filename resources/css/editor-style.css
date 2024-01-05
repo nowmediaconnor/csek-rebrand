@@ -5,14 +5,18 @@ body {
     @apply font-sans;
 }
 
-.wp-block{
+.wp-block {
     @apply max-w-screen-xl;
 }
 
-.wp-block[data-align=wide] {
+.wp-block[data-align="wide"] {
     @apply max-w-screen-xl;
 }
 
-.wp-block[data-align=full] {
-    @apply max-w-full;
+.wp-block[data-align="full"] {
+    @apply max-w-csek-max;
+}
+
+div.edit-post-visual-editor__post-title-wrapper {
+    @apply text-3xl font-bold font-syne mb-8;
 }
