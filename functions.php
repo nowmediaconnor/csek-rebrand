@@ -61,6 +61,7 @@ function csek_rebrand_setup()
 
 	add_theme_support('editor-styles');
 	add_editor_style('css/editor-style.css');
+	add_editor_style('css/fonts.css');
 }
 
 add_action('after_setup_theme', 'csek_rebrand_setup');
@@ -222,6 +223,12 @@ function calculate_read_time($content)
 }
 
 
+/**
+ * Shortcode function to retrieve related posts based on tags.
+ *
+ * @param array $atts An array of attributes for the shortcode.
+ * @return string The generated HTML for the related posts.
+ */
 function csek_related_posts_by_tag_shortcode($atts)
 {
 	// Shortcode attributes
@@ -234,7 +241,7 @@ function csek_related_posts_by_tag_shortcode($atts)
 
 	// Return if no tags are found
 	if (!$tags) {
-		return 'No related posts found';
+		return '';
 	}
 
 	// WP_Query arguments

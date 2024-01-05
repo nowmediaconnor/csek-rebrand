@@ -6,7 +6,9 @@
  */
 
 /** @var PageMetadata $meta */
-$meta = $args['meta'];
+// $meta = $args['meta'];
+$meta = PageMetadataSingleton::getInstance()->getMetadata();
+
 $needs_contrast = $args['needs_contrast'] ?? false;
 $close_button = $args['close_button'] ?? false;
 
