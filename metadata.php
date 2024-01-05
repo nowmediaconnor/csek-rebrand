@@ -191,7 +191,7 @@ class PageMetadata
 
     public function needs_contrast()
     {
-        return !$this->is_home && $this->has_thumbnail;
+        return !$this->is_home && $this->has_thumbnail && !$this->is_blog_post();
     }
 
     public function logo_url($needs_contrast = null)
@@ -205,12 +205,12 @@ class PageMetadata
 
     public function is_blog_post()
     {
-        return $this->main_category === "blog";
+        return strtoupper($this->main_category) === "BLOG";
     }
 
     public function is_projects_post()
     {
-        return $this->main_category === "projects";
+        return strtoupper($this->main_category) === "PROJECTS";
     }
 
     public function post_title()

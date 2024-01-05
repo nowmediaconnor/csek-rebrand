@@ -20,3 +20,11 @@ body {
 div.edit-post-visual-editor__post-title-wrapper {
     @apply text-3xl font-bold font-syne mb-8;
 }
+
+p.wp-block-paragraph {
+    @apply font-montserrat;
+}
+
+div.edit-post-visual-editor__content-area {
+    @apply w-11/12 max-w-csek-max mx-auto font-montserrat;
+}

@@ -231,6 +231,10 @@ select {
 .blog-content {
     @apply flex flex-col gap-6;
 
+    & p {
+        @apply indent-4;
+    }
+
     & .wp-block-heading {
         @apply font-bold my-2 font-syne;
     }
