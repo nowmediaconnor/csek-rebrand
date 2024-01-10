@@ -232,14 +232,26 @@ select {
 /* Blog */
 
 .blog-content {
-    @apply flex flex-col gap-6;
+    @apply flex flex-col gap-6 w-11/12 mx-auto;
 
-    & p {
-        @apply indent-4;
+    & a {
+        @apply text-csek-red border-b border-csek-red transition-all ease-in-out duration-200;
+
+        &:hover {
+            @apply text-csek-dark border-csek-dark;
+        }
+    }
+
+    & p,
+    ul,
+    ol,
+    blockquote,
+    pre {
+        @apply w-11/12 max-w-csek-2/3 mx-auto;
     }
 
     & .wp-block-heading {
-        @apply font-bold my-2 font-syne;
+        @apply font-bold my-2 font-syne w-11/12 max-w-csek-2/3 mx-auto;
     }
 
     & h1.wp-block-heading {

@@ -242,4 +242,9 @@ class PageMetadata
     {
         echo "mailto:?subject=" . urlencode(get_the_title()) . "&body=" . urlencode(get_permalink());
     }
+
+    public function get_reddit_link()
+    {
+        echo "https://reddit.com/submit?url=" . urlencode(get_permalink()) . "&title=" . urlencode(get_the_title());
+    }
 }
