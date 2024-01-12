@@ -19,7 +19,7 @@ $meta = PageMetadataSingleton::getInstance()->getMetadata();
 	else :
 	?>
 
-		<div class="w-full">
+		<div id="page-body" class="w-full">
 			<?php the_content(); ?>
 
 			<?php

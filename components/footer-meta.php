@@ -6,7 +6,7 @@
 ?>
 <div class="flex flex-col text-xs justify-center items-end gap-2">
     <div class="flex flex-row gap-8">
-        <a href="#privacy">Privacy Policy</a>
+        <a href="/privacy-policy">Privacy Policy</a>
         <a href="#sitemap">Sitemap</a>
         <a href="https://legacy.csekcreative.com/product-service-calculator/" target="_blank" rel="noopener noreferrer">Magic Tool</a>
     </div>

@@ -229,25 +229,32 @@ select {
     }
 }
 
-/* Blog */
+/* Blog & Page Body */
 
 .blog-content {
     @apply flex flex-col gap-6 w-11/12 mx-auto;
+}
 
-    & a {
-        @apply text-csek-red border-b border-csek-red transition-all ease-in-out duration-200;
-
-        &:hover {
-            @apply text-csek-dark border-csek-dark;
-        }
-    }
-
-    & p,
-    ul,
-    ol,
-    blockquote,
-    pre {
+.blog-content,
+#page-body {
+    & > *:not(.guten-csek-block) {
         @apply w-11/12 max-w-csek-2/3 mx-auto;
+
+        & a {
+            @apply text-csek-red border-b border-csek-red transition-all ease-in-out duration-200;
+
+            &:hover {
+                @apply text-csek-dark border-csek-dark;
+            }
+        }
+
+        &:last-child {
+            @apply mb-8;
+        }
+
+        &:first-child {
+            @apply mt-8;
+        }
     }
 
     & .wp-block-heading {

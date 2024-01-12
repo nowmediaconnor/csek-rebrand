@@ -350,3 +350,18 @@ function csek_related_posts_by_tag_shortcode($atts)
 
 // Register the shortcode
 add_shortcode('related_posts_by_tags', 'csek_related_posts_by_tag_shortcode');
+
+
+/* Override Media REST API */
+
+add_filter('rest_authentication_errors', function ($result) {
+	// Check if the request is for the /wp-json/wp/v2/media endpoint
+	if (strpos($_SERVER['REQUEST_URI'], '/wp-json/wp/v2/media') !== false) {
+		// If it is, allow unauthenticated access
+		return null;
+	}
+	return $result;
+});
+
+
+/* Add Guten-Csek Classname */

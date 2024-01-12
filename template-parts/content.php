@@ -7,7 +7,7 @@
 
 	<?php else : ?>
 
-		<div class="w-full">
+		<div id="page-body" class="w-full">
 			<?php
 			/* translators: %s: Name of current post */
 			the_content(
