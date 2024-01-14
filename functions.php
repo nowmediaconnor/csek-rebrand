@@ -60,11 +60,15 @@ function csek_rebrand_setup()
 	add_theme_support('wp-block-styles');
 
 	add_theme_support('editor-styles');
-	add_editor_style('css/editor-style.css');
-	add_editor_style('css/fonts.css');
 }
-
 add_action('after_setup_theme', 'csek_rebrand_setup');
+
+function csek_rebrand_editor()
+{
+	add_editor_style(['css/editor-style.css', 'css/fonts.css']);
+}
+add_action("admin_init", "csek_rebrand_editor");
+
 
 function csek_theme_file_path(string $relative_path)
 {

@@ -28,3 +28,7 @@ p.wp-block-paragraph {
 div.edit-post-visual-editor__content-area {
     @apply w-11/12 max-w-csek-max mx-auto font-montserrat;
 }
+
+.edit-post-visual-editor {
+    @apply w-11/12 max-w-csek-max mx-auto;
+}
