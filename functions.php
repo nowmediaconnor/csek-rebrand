@@ -76,7 +76,7 @@ function csek_theme_file_path(string $relative_path)
 	// Remove leading slash if present
 	$relative_path = ltrim($relative_path, '/');
 
-	return plugin_dir_path(__FILE__) . $relative_path;
+	return get_template_directory() . DIRECTORY_SEPARATOR . $relative_path;
 }
 
 function csek_file_version(string $filepath)

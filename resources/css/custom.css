@@ -257,6 +257,10 @@ select {
         }
     }
 
+    & > * {
+        @apply text-base;
+    }
+
     & ul {
         @apply list-hyphen flex flex-col gap-2 pl-4;
     }
