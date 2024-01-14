@@ -59,15 +59,16 @@ function csek_rebrand_setup()
 	add_theme_support('align-wide');
 	add_theme_support('wp-block-styles');
 
-	add_theme_support('editor-styles');
+	// add_theme_support('editor-styles');
 }
 add_action('after_setup_theme', 'csek_rebrand_setup');
 
 function csek_rebrand_editor()
 {
-	add_editor_style(['css/editor-style.css', 'css/fonts.css']);
+	wp_enqueue_style('fonts', csek_rebrand_asset('css/fonts.css'), [], csek_file_version('css/fonts.css'));
+	wp_enqueue_style('csek-editor-styles', csek_rebrand_asset('css/editor-style.css'), ['fonts'], csek_file_version('css/editor-style.css'));
 }
-add_action("admin_init", "csek_rebrand_editor");
+add_action("enqueue_block_editor_assets", "csek_rebrand_editor");
 
 
 function csek_theme_file_path(string $relative_path)
@@ -238,6 +239,7 @@ function csek_related_posts_by_tag_shortcode($atts)
 	// Shortcode attributes
 	$atts = shortcode_atts(array(
 		'posts_per_page' => 4, // Default number of posts
+		'category' => null
 	), $atts);
 
 	// Get tags of the current post
@@ -255,6 +257,7 @@ function csek_related_posts_by_tag_shortcode($atts)
 		'posts_per_page' => $atts['posts_per_page'],
 		'post__not_in' => array(get_the_ID()), // Exclude current post
 		'no_found_rows' => true, // Performance boost since pagination is not needed
+		'category_name' => $atts['category']
 	);
 
 	$current_post_tags = array_map(function ($item) {

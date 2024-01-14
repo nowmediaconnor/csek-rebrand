@@ -80,7 +80,7 @@ select {
 /* Generic Classes */
 
 .chip {
-    @apply inline-flex items-center justify-center text-center h-min rounded-full px-3 py-1 text-xs font-medium text-zinc-500 bg-zinc-100 font-montserrat uppercase transition-all duration-200 ease-in-out;
+    @apply inline-flex items-center justify-center text-center h-min rounded-full px-3 py-1 text-xs font-medium text-zinc-500 bg-zinc-100 font-montserrat uppercase transition-all duration-200 ease-in-out whitespace-nowrap;
 
     &:hover {
         @apply transform scale-105;
@@ -232,7 +232,7 @@ select {
 /* Blog & Page Body */
 
 .blog-content {
-    @apply flex flex-col gap-6 w-11/12 mx-auto;
+    @apply flex flex-col gap-6 mx-auto;
 }
 
 .blog-content,
@@ -255,6 +255,14 @@ select {
         &:first-child {
             @apply mt-8;
         }
+    }
+
+    & ul {
+        @apply list-hyphen flex flex-col gap-2 pl-4;
+    }
+
+    & ol {
+        @apply list-decimal flex flex-col gap-2 pl-4;
     }
 
     & .wp-block-heading {

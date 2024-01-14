@@ -79,6 +79,9 @@ module.exports = {
             aspectRatio: {
                 "4/3": "4 / 3",
             },
+            listStyleType: {
+                hyphen: '"\u2013 "',
+            },
         },
         screens: {
             xs: "480px",

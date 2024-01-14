@@ -30,5 +30,17 @@ div.edit-post-visual-editor__content-area {
 }
 
 .edit-post-visual-editor {
-    @apply w-11/12 max-w-csek-max mx-auto;
+    @apply w-11/12 max-w-csek-max mx-auto bg-transparent;
+
+    & *:not(.dashicon) {
+        @apply font-montserrat;
+    }
+
+    & ul {
+        @apply list-hyphen flex flex-col gap-2 pl-4;
+    }
+
+    & ol {
+        @apply list-decimal flex flex-col gap-2 pl-4;
+    }
 }
