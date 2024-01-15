@@ -172,11 +172,56 @@ add_filter('nav_menu_submenu_css_class', 'csek_rebrand_nav_menu_add_submenu_clas
 add_theme_support('post-thumbnails');
 
 /* Rgister Custom Nav Menu */
-function register_csek_menu()
+function register_csek_menus()
 {
 	register_nav_menu('csek-menu', __('Csek Menu'));
 }
-add_action('init', 'register_csek_menu');
+
+/* Custom Post Types */
+function csek_rebrand_custom_post_types()
+{
+	// Project
+	$project_args = [
+		'labels' => [
+			'name' => __('Projects'),
+			'singular_name' => __('Project'),
+			'add_new' => __('Add new project'),
+			'add_new_item' => __('Add New Project'),
+		],
+		'public' => true,
+		'has_archive' => true,
+		'menu_icon' => 'dashicons-archive', // Add this line
+		'menu_position' => 5,
+		'show_in_rest' => true,
+		'supports' => ['title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments']
+	];
+	register_post_type('project', $project_args);
+
+	// Staff bio
+	$staff_args = [
+		'labels' => [
+			'name' => __('Staff bios'),
+			'singular_name' => __('Staff bio'),
+			'add_new' => __('Add new staff bio'),
+			'add_new_item' => __('Add New Staff Bio'),
+		],
+		'public' => true,
+		'has_archive' => true,
+		'menu_icon' => 'dashicons-admin-users', // Add this line
+		'menu_position' => 6,
+		'show_in_rest' => true,
+		'supports' => ['title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments']
+	];
+	register_post_type('staff', $staff_args);
+}
+
+/** Csek Rebrand Theme Init */
+function csek_rebrand_theme_init()
+{
+	register_csek_menus();
+	csek_rebrand_custom_post_types();
+}
+add_action('init', 'csek_rebrand_theme_init');
 
 
 /* Generate <li>s from array */
@@ -354,10 +399,8 @@ function csek_related_posts_by_tag_shortcode($atts)
 
 	return $html;
 }
-
 // Register the shortcode
 add_shortcode('related_posts_by_tags', 'csek_related_posts_by_tag_shortcode');
-
 
 /* Override Media REST API */
 

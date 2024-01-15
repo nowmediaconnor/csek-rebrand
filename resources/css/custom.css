@@ -9,11 +9,6 @@ body {
     @apply relative;
 }
 
-#page.nav-open {
-    overflow: hidden;
-    height: 100vh;
-}
-
 select {
     box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.7);
     border-radius: 1rem;
@@ -233,6 +228,14 @@ select {
 
 .blog-content {
     @apply flex flex-col gap-6 mx-auto;
+
+    & ul {
+        @apply list-hyphen flex flex-col gap-2 pl-4;
+    }
+
+    & ol {
+        @apply list-decimal flex flex-col gap-2 pl-4;
+    }
 }
 
 .blog-content,
@@ -259,14 +262,6 @@ select {
 
     & > * {
         @apply text-base;
-    }
-
-    & ul {
-        @apply list-hyphen flex flex-col gap-2 pl-4;
-    }
-
-    & ol {
-        @apply list-decimal flex flex-col gap-2 pl-4;
     }
 
     & .wp-block-heading {
