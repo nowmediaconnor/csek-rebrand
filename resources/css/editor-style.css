@@ -30,9 +30,9 @@ div.edit-post-visual-editor__content-area {
 }
 
 .edit-post-visual-editor {
-    @apply w-11/12 max-w-csek-max mx-auto bg-transparent;
+    @apply w-11/12 max-w-csek-max mx-auto bg-transparent pb-12;
 
-    & *:not(.dashicon) {
+    & *:not(.dashicon, .csek-block-heading, .fa, .fab, .fas, .far, .wp-block-heading, .wp-block-heading *) {
         @apply font-montserrat;
     }
 
