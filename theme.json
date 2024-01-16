@@ -1,6 +1,12 @@
 {
-    "version": 1,
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 2,
     "settings": {
+        "spacing": {
+            "margin": true,
+            "padding": true,
+            "units": ["px", "rem", "em", "%"]
+        },
         "layout": {
             "contentSize": "960px",
             "wideSize": "1280px"
