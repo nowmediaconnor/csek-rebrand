@@ -402,16 +402,46 @@ function csek_related_posts_by_tag_shortcode($atts)
 // Register the shortcode
 add_shortcode('related_posts_by_tags', 'csek_related_posts_by_tag_shortcode');
 
-/* Override Media REST API */
 
-add_filter('rest_authentication_errors', function ($result) {
-	// Check if the request is for the /wp-json/wp/v2/media endpoint
-	if (strpos($_SERVER['REQUEST_URI'], '/wp-json/wp/v2/media') !== false) {
-		// If it is, allow unauthenticated access
-		return null;
+/* Disable Comments Site-wide */
+function disable_comments_post_types_support()
+{
+	$post_types = get_post_types();
+	foreach ($post_types as $post_type) {
+		if (post_type_supports($post_type, 'comments')) {
+			remove_post_type_support($post_type, 'comments');
+			remove_post_type_support($post_type, 'trackbacks');
+		}
 	}
-	return $result;
-});
+}
+add_action('admin_init', 'disable_comments_post_types_support');
 
+/**
+ * Black-hole for comments requests.
+ */
+function disable_comments_status()
+{
+	return false;
+}
+add_filter('comments_open', 'disable_comments_status', 20, 2);
+add_filter('pings_open', 'disable_comments_status', 20, 2);
 
-/* Add Guten-Csek Classname */
+/**
+ * Hide comments from admin bar on left hand side of back-end.
+ */
+function disable_comments_admin_menu()
+{
+	remove_menu_page('edit-comments.php');
+}
+add_action('admin_menu', 'disable_comments_admin_menu');
+
+/**
+ * Disable comments from admin bar at top of front-end.
+ */
+function disable_comments_admin_bar()
+{
+	if (is_admin_bar_showing()) {
+		remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
+	}
+}
+add_action('init', 'disable_comments_admin_bar');
