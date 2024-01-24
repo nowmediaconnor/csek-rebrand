@@ -8,12 +8,12 @@
 
 <footer id="colophon" class="site-footer relative bg-csek-dark pt-8 pb-12 md:py-12 font-syne" role="contentinfo">
 	<div class="grid grid-cols-2 md:grid-cols-5 grid-rows-footer-mobile md:grid-rows-footer gap-y-8 auto-rows-min text-csek-light justify-between h-full content-around w-11/12 md:max-w-[75rem] mx-auto">
-		<div class="col-start-1 row-start-1 col-span-1 md:col-span-2 row-span-1">
-			<h3 class="text-3xl md:text-6xl font-bold">Knock&nbsp;on our&nbsp;door anytime.</h3>
-		</div>
-		<div class="col-start-2 md:col-start-3 md:row-start-1 col-span-1 row-span-1 flex flex-col items-center justify-center gap-4">
+		<div class="col-start-1 row-start-1 col-span-1 md:col-span-3 row-span-1 flex flex-col md:flex-row gap-4 text-pretty">
+			<h3 class="text-4xl md:text-6xl font-bold md:w-2/3">Knock on our door anytime.</h3>
 			<?php get_template_part('components/knock-knock'); ?>
 		</div>
+		<!-- <div class="col-start-2 md:col-start-3 md:row-start-1 col-span-1 row-span-1 flex flex-col items-center justify-center gap-4">
+		</div> -->
 		<div class="col-start-5 justify-end items-center hidden md:flex">
 			<?php get_template_part('components/csek-monogram'); ?>
 		</div>

@@ -178,7 +178,7 @@ select {
 
             & .sub-menu {
                 --submenu-height: 9999px;
-                @apply relative left-8 flex flex-col gap-4 h-fit overflow-hidden;
+                @apply relative left-8 flex flex-col gap-4 h-fit overflow-hidden mt-4 md:my-0;
                 transition:
                     max-height 300ms ease-in-out,
                     margin 300ms ease-in-out;
