@@ -315,6 +315,12 @@ select {
     @apply pointer-events-auto opacity-100;
 }
 
+/* Newsletter Form Screen */
+
+#newsletter-form.open {
+    @apply pointer-events-auto opacity-100;
+}
+
 /* Hide Wordpress Header */
 
 .toggle-header {
