@@ -12,9 +12,10 @@
     "text_domain": "csek-rebrand",
     "license": "MIT",
     "scripts": {
-        "production:css-app": "cross-env NODE_ENV=development tailwindcss -i ./resources/css/app.css -o ./css/app.css --postcss --minify",
-        "production:css-editor": "cross-env NODE_ENV=development tailwindcss -i ./resources/css/editor-style.css -o ./css/editor-style.css --postcss --minify",
-        "production:js": "cross-env NODE_ENV=development ./node_modules/.bin/esbuild ./resources/js/app.js --bundle --outfile=./js/app.js --minify",
+        "production:css-app": "cross-env NODE_ENV=production tailwindcss -i ./resources/css/app.css -o ./css/app.css --postcss --minify",
+        "production:css-editor": "cross-env NODE_ENV=production tailwindcss -i ./resources/css/editor-style.css -o ./css/editor-style.css --postcss --minify",
+        "production:css": "yarn production:css-app && yarn production:css-editor",
+        "production:js": "cross-env NODE_ENV=production ./node_modules/.bin/esbuild ./resources/js/app.js --bundle --outfile=./js/app.js --minify",
         "dev:css-app": "cross-env NODE_ENV=development tailwindcss -i ./resources/css/app.css -o ./css/app.css --postcss",
         "dev:css-editor": "cross-env NODE_ENV=development tailwindcss -i ./resources/css/editor-style.css -o ./css/editor-style.css --postcss",
         "dev:js": "cross-env NODE_ENV=development ./node_modules/.bin/esbuild ./resources/js/app.js --bundle --outfile=./js/app.js",
@@ -27,7 +28,7 @@
         "browser-sync": "cross-env NODE_ENV=development browser-sync start --proxy \"csek-rebrand.test\" --host=\"csek-rebrand.test\" --no-inject-changes --files=\"./\"",
         "watch-sync": "cross-env NODE_ENV=development concurrently \"npm run browser-sync\" \"npm run watch\"",
         "start": "wp-scripts start",
-        "build": "wp-scripts build"
+        "build": "yarn production:css && wp-scripts build"
     },
     "devDependencies": {
         "@jeffreyvr/tailwindcss-tailpress": "^2.0.0",
