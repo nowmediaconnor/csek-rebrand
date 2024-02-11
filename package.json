@@ -47,5 +47,8 @@
     "main": "js/app.js",
     "dependencies": {
         "@wordpress/api-fetch": "^6.44.0"
+    },
+    "resolutions": {
+        "**/axios": "^1.6.1"
     }
 }
