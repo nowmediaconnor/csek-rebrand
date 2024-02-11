@@ -14,7 +14,8 @@
     "scripts": {
         "production:css-app": "cross-env NODE_ENV=production tailwindcss -i ./resources/css/app.css -o ./css/app.css --postcss --minify",
         "production:css-editor": "cross-env NODE_ENV=production tailwindcss -i ./resources/css/editor-style.css -o ./css/editor-style.css --postcss --minify",
-        "production:css": "yarn production:css-app && yarn production:css-editor",
+        "production:css-fonts": "cross-env NODE_ENV=production tailwindcss -i ./resources/css/fonts.css -o ./css/fonts.css --postcss --minify",
+        "production:css": "yarn production:css-app && yarn production:css-editor && yarn production:css-fonts",
         "production:js": "cross-env NODE_ENV=production ./node_modules/.bin/esbuild ./resources/js/app.js --bundle --outfile=./js/app.js --minify",
         "dev:css-app": "cross-env NODE_ENV=development tailwindcss -i ./resources/css/app.css -o ./css/app.css --postcss",
         "dev:css-editor": "cross-env NODE_ENV=development tailwindcss -i ./resources/css/editor-style.css -o ./css/editor-style.css --postcss",

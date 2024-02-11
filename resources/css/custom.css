@@ -26,10 +26,25 @@ select {
     background-size: 0.65em auto;
 }
 
-/* article > *:not(.entry-content),
-.entry-content > * {
-    @apply mx-auto max-w-content;
-} */
+/* Animations */
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@media not (prefers-reduced-motion) {
+    #scroll-down div {
+        animation-name: spin;
+        animation-duration: 60000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+}
 
 .entry-content,
 .block-editor-block-list__layout {
