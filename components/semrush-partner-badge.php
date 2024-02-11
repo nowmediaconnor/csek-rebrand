@@ -5,5 +5,5 @@
  */
 ?>
 <a href="https://www.semrush.com/agencies/csek-creative/" rel="noreferrer noopener" target="_blank" class="h-full">
-    <img src="https://static.semrush.com/agency-directory/shared/badge.svg" class="h-full w-auto">
+    <img src="https://static.semrush.com/agency-directory/shared/badge.svg" alt="Semrush partner badge" class="h-full w-auto">
 </a>
