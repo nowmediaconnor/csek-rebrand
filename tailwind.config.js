@@ -6,6 +6,7 @@ const customWidths = {
     "csek-1/2": "37.5rem",
     "csek-2/3": "50rem",
     serif: "12rem",
+    "csek-margin": "max(calc((100vw - 75rem + 3rem) / 2), 0px)",
 };
 
 const customTimings = {
@@ -61,6 +62,7 @@ module.exports = {
                 ...customTimings,
             },
             spacing: {
+                ...customWidths,
                 header: "5rem",
             },
             width: {
