@@ -70,7 +70,64 @@
     const scrollToTop = document.getElementById(id);
     if (!scrollToTop)
       return;
+    const scrollViewport = addInitialViewport();
+    const pageFooter = getPageFooter();
     addClickListener(scrollToTop);
+    addViewportIntersectionObserver(scrollToTop, scrollViewport);
+    addFooterIntersectionObserver(scrollToTop, pageFooter);
+  }
+  function addInitialViewport(id = "scroll-to-top-intial-viewport") {
+    const scrollViewport = document.createElement("div");
+    scrollViewport.id = id;
+    scrollViewport.style.position = "absolute";
+    scrollViewport.style.width = "100vw";
+    scrollViewport.style.height = "100vh";
+    scrollViewport.style.top = "0";
+    scrollViewport.style.left = "0";
+    scrollViewport.style.zIndex = "-1";
+    scrollViewport.style.pointerEvents = "none";
+    document.body.prepend(scrollViewport);
+    return scrollViewport;
+  }
+  function getPageFooter(id = "colophon") {
+    const footer = document.getElementById(id);
+    if (!footer) {
+      const backupFooter = document.querySelector("body > footer");
+      if (!backupFooter) {
+        throw new Error("No footer found");
+      }
+      return backupFooter;
+    }
+    return footer;
+  }
+  function addIntersectionObserver(scrollToTop, target, customOptions) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            hideScrollToTopButton(scrollToTop);
+            console.log(`Scroll to top button hidden. (${target.id})`);
+          } else {
+            showScrollToTopButton(scrollToTop);
+            console.log(`Scroll to top button shown. (${target.id})`);
+          }
+        });
+      },
+      { root: null, threshold: 0.75, ...customOptions }
+    );
+    observer.observe(target);
+  }
+  function addViewportIntersectionObserver(scrollToTop, scrollViewport) {
+    addIntersectionObserver(scrollToTop, scrollViewport);
+  }
+  function addFooterIntersectionObserver(scrollToTop, pageFooter) {
+    addIntersectionObserver(scrollToTop, pageFooter, { threshold: 0.1 });
+  }
+  function showScrollToTopButton(scrollToTop) {
+    scrollToTop.classList.remove("disable-and-hide");
+  }
+  function hideScrollToTopButton(scrollToTop) {
+    scrollToTop.classList.add("disable-and-hide");
   }
   function addClickListener(elmt) {
     elmt.addEventListener("click", () => {

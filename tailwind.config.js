@@ -1,5 +1,6 @@
 const theme = require("./theme.json");
 const tailpress = require("@jeffreyvr/tailwindcss-tailpress");
+const plugin = require("tailwindcss/plugin");
 
 const customWidths = {
     "csek-max": "75rem",
@@ -30,7 +31,7 @@ const customTimings = {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     // important: true,
-    content: ["./*.php", "./**/*.php", "./resources/css/*.css", "./resources/js/*.js", "./safelist.txt"],
+    content: ["./*.php", "./**/*.php", "./src/css/*.css", "./src/js/*.{js,ts}", "./safelist.txt"],
     theme: {
         container: {
             padding: {
@@ -94,5 +95,15 @@ module.exports = {
             "2xl": "1440px",
         },
     },
-    plugins: [tailpress.tailwind],
+    plugins: [
+        tailpress.tailwind,
+        plugin(function ({ addUtilities }) {
+            addUtilities({
+                ".disable-and-hide": {
+                    pointerEvents: "none",
+                    opacity: "0",
+                },
+            });
+        }),
+    ],
 };
