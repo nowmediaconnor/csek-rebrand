@@ -16,5 +16,7 @@
 
 </div>
 
+<?php get_template_part('components/scroll-to-top') ?>
+
 <?php
 get_footer();

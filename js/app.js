@@ -1,10 +1,39 @@
+"use strict";
 (() => {
-  // resources/js/app.js
+  // src/js/toggle-wp-header.ts
+  async function addToggleHeaderButton() {
+    const searchParams = new URLSearchParams(window.location.search);
+    const preview = searchParams.get("preview");
+    if (!preview || preview === "")
+      return;
+    const button = document.createElement("input");
+    button.setAttribute("type", "checkbox");
+    button.setAttribute("id", "toggle-header");
+    button.setAttribute("class", "toggle-header");
+    button.setAttribute("title", "Toggle Wordpress Header");
+    button.addEventListener("change", (e) => {
+      const toggleHeaderCheckbox = e.target;
+      const header = document.querySelector("#wpadminbar");
+      if (!toggleHeaderCheckbox || !header)
+        return;
+      const checked = toggleHeaderCheckbox.checked;
+      if (checked) {
+        header.classList.add("hide-header");
+      } else {
+        header.classList.remove("hide-header");
+      }
+    });
+    document.body.appendChild(button);
+  }
+
+  // src/js/nav-controller.ts
   function prepareNavController() {
     const mainNavigation = document.querySelector(".csek-nav-menu");
     const navOpenButtons = document.querySelectorAll("a[data-nav-open]");
     const navCloseButtons = document.querySelectorAll("a[data-nav-close]");
     const page = document.getElementById("page");
+    if (!mainNavigation || !navOpenButtons || !navCloseButtons || !page)
+      return;
     navCloseButtons.forEach((button) => {
       button.addEventListener("click", (e) => {
         e.preventDefault();
@@ -20,44 +49,41 @@
       });
     });
   }
-  async function addToggleHeaderButton() {
-    const searchParams = new URLSearchParams(window.location.search);
-    const preview = searchParams.get("preview");
-    if (!preview || preview === false)
-      return;
-    const button = document.createElement("input");
-    button.setAttribute("type", "checkbox");
-    button.setAttribute("id", "toggle-header");
-    button.setAttribute("class", "toggle-header");
-    button.setAttribute("title", "Toggle Wordpress Header");
-    button.addEventListener("change", (e) => {
-      const checked = e.target.checked;
-      const header = document.querySelector("#wpadminbar");
-      if (checked) {
-        header.classList.add("hide-header");
-      } else {
-        header.classList.remove("hide-header");
-      }
-    });
-    document.body.appendChild(button);
-  }
   function computeSubmenuHeights() {
     const navMenu = document.querySelector(".csek-nav-menu");
     if (!navMenu)
       return;
     const submenus = navMenu.querySelectorAll(".sub-menu");
     submenus.forEach((submenu) => {
-      if (submenu.classList.contains("submenu-ready"))
-        submenu.classList.remove("submenu-ready");
-      const submenuHeight = submenu.offsetHeight;
-      submenu.style.setProperty("--submenu-height", `${submenuHeight}px`);
-      submenu.classList.add("submenu-ready");
+      const htmlSubmenu = submenu;
+      if (htmlSubmenu.classList.contains("submenu-ready"))
+        htmlSubmenu.classList.remove("submenu-ready");
+      const submenuHeight = htmlSubmenu.offsetHeight;
+      htmlSubmenu.style.setProperty("--submenu-height", `${submenuHeight}px`);
+      htmlSubmenu.classList.add("submenu-ready");
     });
   }
+
+  // src/js/scroll-to-top.ts
+  function setupScrollToTop(id = "scroll-to-top") {
+    console.log("Setting up scroll to top button...");
+    const scrollToTop = document.getElementById(id);
+    if (!scrollToTop)
+      return;
+    addClickListener(scrollToTop);
+  }
+  function addClickListener(elmt) {
+    elmt.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  // src/js/app.ts
   window.addEventListener("load", () => {
     prepareNavController();
     addToggleHeaderButton();
     computeSubmenuHeights();
+    setupScrollToTop();
   });
   window.addEventListener("resize", () => {
     computeSubmenuHeights();
