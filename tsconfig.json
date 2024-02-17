@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "es5", // ES5 is widely supported by browsers
+        "module": "esnext", // Use 'esnext' or 'es6' to enable ESM import statements
+        "lib": ["dom", "es2015"], // Include DOM and ES2015 library files
+        "outDir": "./dist", // Specify an output folder for all emitted files
+        "rootDir": "./src", // Specify the root folder within your source files
+        "strict": true, // Enable all strict type-checking options
+        "esModuleInterop": true, // Enables CommonJS/AMD/UMD style imports to be interpreted as ES6 imports
+        "forceConsistentCasingInFileNames": true // Disallow inconsistently-cased references to the same file
+    },
+    "include": ["src/**/*.ts"], // Include TypeScript files in 'src' directory
+    "exclude": ["node_modules"] // Exclude 'node_modules' directory
+}

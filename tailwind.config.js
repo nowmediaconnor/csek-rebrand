@@ -1,11 +1,13 @@
 const theme = require("./theme.json");
 const tailpress = require("@jeffreyvr/tailwindcss-tailpress");
+const plugin = require("tailwindcss/plugin");
 
 const customWidths = {
     "csek-max": "75rem",
     "csek-1/2": "37.5rem",
     "csek-2/3": "50rem",
     serif: "12rem",
+    "csek-margin": "max(calc((100vw - 75rem + 3rem) / 2), 0px)",
 };
 
 const customTimings = {
@@ -29,7 +31,7 @@ const customTimings = {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     // important: true,
-    content: ["./*.php", "./**/*.php", "./resources/css/*.css", "./resources/js/*.js", "./safelist.txt"],
+    content: ["./*.php", "./**/*.php", "./src/css/*.css", "./src/js/*.{js,ts}", "./safelist.txt"],
     theme: {
         container: {
             padding: {
@@ -39,7 +41,9 @@ module.exports = {
             },
         },
         extend: {
-            colors: tailpress.colorMapper(tailpress.theme("settings.color.palette", theme)),
+            colors: {
+                ...tailpress.colorMapper(tailpress.theme("settings.color.palette", theme)),
+            },
             fontSize: tailpress.fontSizeMapper(tailpress.theme("settings.typography.fontSizes", theme)),
             fontFamily: {
                 syne: ["Syne", "sans-serif"],
@@ -61,6 +65,7 @@ module.exports = {
                 ...customTimings,
             },
             spacing: {
+                ...customWidths,
                 header: "5rem",
             },
             width: {
@@ -92,5 +97,15 @@ module.exports = {
             "2xl": "1440px",
         },
     },
-    plugins: [tailpress.tailwind],
+    plugins: [
+        tailpress.tailwind,
+        plugin(function ({ addUtilities }) {
+            addUtilities({
+                ".disable-and-hide": {
+                    pointerEvents: "none",
+                    opacity: "0",
+                },
+            });
+        }),
+    ],
 };
