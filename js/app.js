@@ -66,15 +66,15 @@
 
   // src/js/scroll-to-top.ts
   function setupScrollToTop(id = "scroll-to-top") {
-    console.log("Setting up scroll to top button...");
     const scrollToTop = document.getElementById(id);
     if (!scrollToTop)
       return;
     const scrollViewport = addInitialViewport();
     const pageFooter = getPageFooter();
     addClickListener(scrollToTop);
-    addViewportIntersectionObserver(scrollToTop, scrollViewport);
     addFooterIntersectionObserver(scrollToTop, pageFooter);
+    addViewportIntersectionObserver(scrollToTop, scrollViewport);
+    setTimeout(() => hideScrollToTopButton(scrollToTop), 250);
   }
   function addInitialViewport(id = "scroll-to-top-intial-viewport") {
     const scrollViewport = document.createElement("div");
@@ -106,10 +106,8 @@
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             hideScrollToTopButton(scrollToTop);
-            console.log(`Scroll to top button hidden. (${target.id})`);
           } else {
             showScrollToTopButton(scrollToTop);
-            console.log(`Scroll to top button shown. (${target.id})`);
           }
         });
       },
