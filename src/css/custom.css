@@ -197,6 +197,10 @@ select {
                 transition:
                     max-height 300ms ease-in-out,
                     margin 300ms ease-in-out;
+
+                & .menu-item {
+                    @apply text-xl md:text-3xl md:leading-none;
+                }
             }
 
             & .menu-item-has-children:hover > .sub-menu.submenu-ready {
