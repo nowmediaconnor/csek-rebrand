@@ -87,6 +87,9 @@ module.exports = {
             listStyleType: {
                 hyphen: '"\u2013 "',
             },
+            fontSize: {
+                "2xs": "0.625rem",
+            },
         },
         screens: {
             xs: "480px",
@@ -104,6 +107,10 @@ module.exports = {
                 ".disable-and-hide": {
                     pointerEvents: "none",
                     opacity: "0",
+                },
+                ".text-2xs": {
+                    fontSize: "0.625rem",
+                    lineHeight: "1",
                 },
             });
         }),
