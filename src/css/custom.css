@@ -259,8 +259,10 @@ select {
 
 .blog-content,
 #page-body {
-    & > *:not(.guten-csek-block) {
-        @apply w-11/12 max-w-csek-2/3 mx-auto;
+    & > *:not(:is(.guten-csek-block:not(.wp-block-guten-csek-paragraph-block))) {
+        &:not(.wp-block-guten-csek-paragraph-block) {
+            @apply w-11/12 max-w-csek-2/3 mx-auto;
+        }
 
         & a {
             @apply text-csek-red border-b border-csek-red transition-all ease-in-out duration-200;
@@ -284,7 +286,7 @@ select {
     }
 
     & .wp-block-heading {
-        @apply font-bold my-2 font-syne w-11/12 max-w-csek-2/3 mx-auto;
+        @apply font-bold my-2 font-syne w-11/12 mx-auto;
     }
 
     & h1.wp-block-heading {
