@@ -214,6 +214,10 @@ select {
 & .addresses {
     & .contact-info {
         @apply text-csek-white font-montserrat text-sm;
+
+        & a {
+            @apply hover:underline;
+        }
     }
 }
 
@@ -363,6 +367,10 @@ select {
 
 #colophon .contact-info {
     @apply basis-auto text-xs;
+
+    & a {
+        @apply hover:underline;
+    }
 }
 
 /* Video Dialog */

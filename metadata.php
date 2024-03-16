@@ -17,8 +17,10 @@ class ContactInfo
     public $zip = "";
     public $country = "";
     public $phone = "";
+    public $email = "";
+    public $address_link = "";
 
-    public function __construct($name = "", $street = "", $line2 = "", $city = "", $state = "", $zip = "", $country = "", $phone = "")
+    public function __construct($name = "", $street = "", $line2 = "", $city = "", $state = "", $zip = "", $country = "", $phone = "", $email = "", $address_link = "")
     {
         $this->name = $name;
         $this->street = $street;
@@ -28,11 +30,16 @@ class ContactInfo
         $this->zip = $zip;
         $this->country = $country;
         $this->phone = $phone;
+        $this->email = $email;
+        $this->address_link = $address_link;
     }
 
     public function to_html()
     {
         $html = "";
+        if ($this->address_link) {
+            $html .= "<a href='" . $this->address_link . "' target='_blank' rel='noopener noreferrer'>";
+        }
         if ($this->name) {
             $html .= "<div class='name'>" . $this->name . "</div>";
         }
@@ -58,8 +65,14 @@ class ContactInfo
         if ($this->country) {
             $html .= "<div class='country'>" . $this->country . "</div>";
         }
+        if ($this->address_link) {
+            $html .= "</a>";
+        }
         if ($this->phone) {
-            $html .= "<div class='phone'>" . $this->phone . "</div>";
+            $html .= "<div class='phone'><a href='tel:" . $this->phone . "' target='_blank' rel='noopener noreferrer'>" . $this->phone . "</a></div>";
+        }
+        if ($this->email) {
+            $html .= "<div class='email'><a href='mailto:" . $this->email . "' target='_blank' rel='noopener noreferrer'>" . $this->email . "</a></div>";
         }
         return "<div class='contact-info'>" . $html . "</div>";
     }
@@ -87,17 +100,21 @@ class SiteMetadata
             "V1Y 0B5",
             null,
             "(250) 862-8010",
+            "info@csekcreative.com",
+            "https://www.google.com/maps/place/Csek+Creative/@49.8802815,-119.4638442,17z/data=!3m2!4b1!5s0x5483e662b778f379:0x726b25aeb107c776!4m6!3m5!1s0x537df4a7c486ddcd:0x93c21387e1a90e29!8m2!3d49.8802815!4d-119.4612693!16s%2Fg%2F1thtp87h?entry=ttu"
         );
 
         self::$kamloops_address = new ContactInfo(
             "Kamloops Office",
             "348 Tranquille Rd",
-            null,
+            null, // line 2
             "Kamloops",
             "BC",
             "V2B 3G6",
-            null,
-            "(250) 862-8010"
+            null, // country
+            "(250) 862-8010",
+            null, // email
+            "https://www.google.com/maps/place/348+Tranquille+Rd,+Kamloops,+BC+V2B+3G6/@50.688704,-120.3600728,17z/data=!3m1!4b1!4m6!3m5!1s0x537e2ce3c305eab3:0x1d643653e92c82a!8m2!3d50.688704!4d-120.3574979!16s%2Fg%2F11bw3zlst8?hl=en&entry=ttu"
         );
 
         self::$vovia_address = new ContactInfo(
@@ -107,8 +124,10 @@ class SiteMetadata
             "Calgary",
             "AB",
             "T2R 1K1",
-            null,
+            null, // country
             "(403) 265-2036",
+            null, // email
+            "https://www.google.com/maps/place/Vovia/@51.0385755,-114.0841689,17z/data=!3m1!4b1!4m6!3m5!1s0x53716fdaf1714a99:0x81acd6667c0c82b1!8m2!3d51.0385755!4d-114.081594!16s%2Fg%2F1td0sk77?entry=ttu"
         );
 
         self::$initialized = true;
